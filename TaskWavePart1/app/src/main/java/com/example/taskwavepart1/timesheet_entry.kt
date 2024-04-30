@@ -36,7 +36,6 @@ class timesheet_entry : AppCompatActivity() {
             val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
             startActivityForResult(intent, 1)
         }
-
     }
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
