@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.text.SimpleDateFormat
 import java.util.Date
 
@@ -35,7 +36,7 @@ class timesheet_entry : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val btnPickImage : Button = findViewById(R.id.btnPickImage)
+        val btnPickImage : FloatingActionButton = findViewById(R.id.btnPickImage)
         val btnPickDateTimesheet : Button = findViewById(R.id.btnPickDateTimesheet)
         val txtDescription : EditText = findViewById(R.id.txtDescription)
         val txtStartTime : EditText = findViewById(R.id.txtStartTime)
@@ -43,6 +44,7 @@ class timesheet_entry : AppCompatActivity() {
         val spinner : Spinner = findViewById(R.id.spinner)
         val btnAddTimesheet : Button = findViewById(R.id.btnAddTimesheet)
         var txtSelectedDate : TextView = findViewById(R.id.txtSelectedDate)
+        val btnBack : FloatingActionButton = findViewById(R.id.btnBack)
 
         var arrCatNames = ArrayList<String>()
 
@@ -58,7 +60,7 @@ class timesheet_entry : AppCompatActivity() {
             Author = GeeksForGeeks
             Usage = used to see how to populate spinner
             */
-            val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, arrCatNames)
+            val adapter = ArrayAdapter(this, R.layout.spinner_list, arrCatNames)
             spinner.adapter = adapter
         }
         /*
@@ -80,6 +82,10 @@ class timesheet_entry : AppCompatActivity() {
                 pickedDate = date
                 txtSelectedDate.text = "Date: " + date
             }
+        }
+        btnBack.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
         btnPickImage.setOnClickListener {
             val intent = Intent(MediaStore.ACTION_PICK_IMAGES)

@@ -5,28 +5,34 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backg"
     tools:context=".timesheet_entry">
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="33dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginEnd="173dp"
+        android:layout_marginBottom="650dp"
+        android:textSize="20dp"
         android:text="Timesheet"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="120dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginBottom="334dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="450dp"
+        android:background="@drawable/camera"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/txtSelectedDate"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,95 +41,136 @@
     <EditText
         android:id="@+id/txtDescription"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="35dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="40dp"
         android:ems="10"
         android:hint="Description"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/btnAddTimesheet"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPickDateTimesheet" />
+        app:layout_constraintStart_toStartOf="@+id/spinner"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtStartTime"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="35dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="95dp"
         android:ems="10"
         android:hint="Start Time"
         android:inputType="time"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/txtEndTime"
-        app:layout_constraintEnd_toEndOf="@+id/spinner"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="211dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginBottom="34dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtStartTime"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txtDescription"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
 
     <Button
         android:id="@+id/btnPickDateTimesheet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="100dp"
         android:text="Date"
-        app:layout_constraintBottom_toTopOf="@+id/txtDescription"
-        app:layout_constraintStart_toStartOf="@+id/txtSelectedDate"
-        app:layout_constraintTop_toBottomOf="@+id/txtEndTime" />
-
-    <EditText
-        android:id="@+id/txtEndTime"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="35dp"
-        android:ems="10"
-        android:hint="End Time"
-        android:inputType="time"
-        app:layout_constraintBottom_toTopOf="@+id/btnPickDateTimesheet"
-        app:layout_constraintStart_toStartOf="@+id/txtStartTime"
-        app:layout_constraintTop_toBottomOf="@+id/txtStartTime" />
+        android:textColor="@color/black"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtEndTime"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
 
     <Button
         android:id="@+id/btnAddTimesheet"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="51dp"
+        android:layout_height="wrap_content"
         android:text="Add"
+        android:textColor="@color/black"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnPickDateTimesheet"
+        app:layout_constraintStart_toStartOf="@+id/btnPickDateTimesheet"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <EditText
+        android:id="@+id/txtEndTime"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginEnd="95dp"
+        android:ems="10"
+        android:hint="End Time"
+        android:inputType="time"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txtStartTime"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.704" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="211dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="200dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPickImage" />
-
-    <Button
-        android:id="@+id/btnPickImage"
-        android:layout_width="62dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="447dp"
-        android:text="+"
-        app:layout_constraintBottom_toTopOf="@+id/btnAddTimesheet"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtSelectedDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="49dp"
-        android:layout_marginBottom="225dp"
+        android:text="Date: None"
+        android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txtDescription"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.858"
+        tools:visibility="visible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginBottom="659dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnPickImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="116dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

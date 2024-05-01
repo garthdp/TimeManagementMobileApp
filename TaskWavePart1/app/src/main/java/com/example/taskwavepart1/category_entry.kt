@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class category_entry : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +24,13 @@ class category_entry : AppCompatActivity() {
         val txtMinHours : TextView = findViewById(R.id.txtMinHours)
         val txtMaxHours : TextView = findViewById(R.id.txtMaxHours)
         val btnAddCategory : Button = findViewById(R.id.btnAddCategory)
+        val btnCateBack : FloatingActionButton = findViewById(R.id.btnCateBack)
         var check = true
+
+        btnCateBack.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         btnAddCategory.setOnClickListener{
             for(i in arrCategories.indices){
