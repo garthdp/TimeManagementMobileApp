@@ -1,6 +1,9 @@
 package com.example.taskwavepart1
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +18,39 @@ class category_entry : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        val txtCategoryName : TextView = findViewById(R.id.txtCategoryName)
+        val txtMinHours : TextView = findViewById(R.id.txtMinHours)
+        val txtMaxHours : TextView = findViewById(R.id.txtMaxHours)
+        val btnAddCategory : Button = findViewById(R.id.btnAddCategory)
+        var check = true
+
+        btnAddCategory.setOnClickListener{
+            for(i in arrCategories.indices){
+                if (txtCategoryName.text.toString() == arrCategories[i].name){
+                    check = false
+                }
+            }
+            if(check && txtCategoryName.text.isNotEmpty() && txtMinHours.text.isNotEmpty() && txtMaxHours.text.isNotEmpty()){
+                val category = Category(txtCategoryName.text.toString(), txtMinHours.text.toString().toInt(), txtMaxHours.text.toString().toInt())
+                arrCategories.add(category)
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+            else{
+                if (txtCategoryName.text.isEmpty()){
+                    txtCategoryName.error = "Needs to be filled"
+                }
+                if (txtMaxHours.text.isEmpty()){
+                    txtMaxHours.error = "Needs to be filled"
+                }
+                if (txtMinHours.text.isEmpty()){
+                    txtMinHours.error = "Needs to be filled"
+                }
+                if (!check){
+                    txtCategoryName.error = "Name already in use"
+                }
+            }
         }
     }
 }

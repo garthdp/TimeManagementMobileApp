@@ -5,8 +5,12 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresExtension
@@ -20,7 +24,7 @@ import java.util.Date
 class timesheet_entry : AppCompatActivity() {
 
     var imageUri : Uri? = null
-
+    var pickedDate : String? = null
     @RequiresExtension(extension = Build.VERSION_CODES.R, version = 2)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +37,29 @@ class timesheet_entry : AppCompatActivity() {
         }
         val btnPickImage : Button = findViewById(R.id.btnPickImage)
         val btnPickDateTimesheet : Button = findViewById(R.id.btnPickDateTimesheet)
+        val txtDescription : EditText = findViewById(R.id.txtDescription)
+        val txtStartTime : EditText = findViewById(R.id.txtStartTime)
+        val txtEndTime : EditText = findViewById(R.id.txtEndTime)
+        val spinner : Spinner = findViewById(R.id.spinner)
+        val btnAddTimesheet : Button = findViewById(R.id.btnAddTimesheet)
+        var txtSelectedDate : TextView = findViewById(R.id.txtSelectedDate)
 
+        var arrCatNames = ArrayList<String>()
+
+        for(i in arrCategories.indices){
+            arrCatNames.add(arrCategories[i].name)
+        }
+        if (spinner != null){
+            /*
+            Code attribution
+            Title = "Spinner in Kotlin"
+            Website link = https://www.geeksforgeeks.org/spinner-in-kotlin/
+            Author = GeeksForGeeks
+            Usage = used to see how to populate spinner
+            */
+            val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, arrCatNames)
+            spinner.adapter = adapter
+        }
         /*
         Code attribution
         Title = "Material Design Date Picker in Android using Kotlin"
@@ -45,19 +71,46 @@ class timesheet_entry : AppCompatActivity() {
             val datePicker = MaterialDatePicker.Builder.datePicker().build()
             datePicker.show(supportFragmentManager, "DatePicker")
 
-            // Setting up the event for when ok is clicked
             datePicker.addOnPositiveButtonClickListener {
                 // formatting date in dd-mm-yyyy format.
-                val dateFormatter = SimpleDateFormat("dd-MM-yyyy")
-                val date = dateFormatter.format(Date(it))
+                val dateFormatter = SimpleDateFormat("dd/MM/yyyy")
+                val date = dateFormatter.format(Date(it)).toString()
                 Toast.makeText(this, "$date is selected", Toast.LENGTH_LONG).show()
-
+                pickedDate = date
+                txtSelectedDate.text = "Date: " + date
+            }
+        }
+        btnPickImage.setOnClickListener {
+            val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
+            startActivityForResult(intent, 1)
+        }
+        btnAddTimesheet.setOnClickListener{
+            val spinnerItem = spinner.selectedItem as String
+            for (i in arrCategories.indices){
+                if (spinnerItem == arrCategories[i].name){
+                    val selectedCategory : Category = arrCategories[i]
+                    if (txtDescription.text.toString().isNotEmpty() && pickedDate != null && txtStartTime.text.toString().isNotEmpty() && txtEndTime.text.toString().isNotEmpty()){
+                        val timesheet = Timesheet(txtDescription.text.toString(), selectedCategory, imageUri, pickedDate, txtStartTime.text.toString(), txtEndTime.text.toString())
+                        arrTimesheets.add(timesheet)
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                    }
+                    else{
+                        Toast.makeText(this, "Fill all fields", Toast.LENGTH_LONG).show()
+                        if (txtDescription.text.isEmpty()){
+                            txtDescription.error = "Needs to be filled"
+                        }
+                        if (txtEndTime.text.isEmpty()){
+                            txtEndTime.error = "Needs to be filled"
+                        }
+                        if (txtStartTime.text.isEmpty()){
+                            txtStartTime.error = "Needs to be filled"
+                        }
+                    }
+                    break
+                }
             }
 
-            btnPickImage.setOnClickListener {
-                val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
-                startActivityForResult(intent, 1)
-            }
         }
     }
     /*
