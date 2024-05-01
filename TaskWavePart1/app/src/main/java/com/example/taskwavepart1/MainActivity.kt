@@ -25,12 +25,7 @@ class MainActivity : AppCompatActivity() {
         val btnChange : Button = findViewById(R.id.btnChange)
         val textView2 : TextView = findViewById(R.id.textView2)
         val btnCateAdd : Button = findViewById(R.id.btnCateAdd)
-
-        val category1 : Category = Category("Category 1", 3, 4)
-        val category2 : Category = Category("Category 2", 3, 4)
-        arrCategories.add(category1)
-        arrCategories.add(category2)
-        var count : String = ""
+        var count = ""
 
         if(arrTimesheets.isNotEmpty()){
             count = arrTimesheets[0].description + arrTimesheets[0].date + arrTimesheets[0].startTime + arrTimesheets[0].image

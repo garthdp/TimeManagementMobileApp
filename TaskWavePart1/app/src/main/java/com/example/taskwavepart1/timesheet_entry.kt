@@ -46,6 +46,7 @@ class timesheet_entry : AppCompatActivity() {
 
         var arrCatNames = ArrayList<String>()
 
+        arrCatNames.clear()
         for(i in arrCategories.indices){
             arrCatNames.add(arrCategories[i].name)
         }
