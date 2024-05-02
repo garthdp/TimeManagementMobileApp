@@ -1,5 +1,6 @@
 package com.example.taskwavepart1
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -11,8 +12,10 @@ import androidx.core.view.WindowInsetsCompat
 
 var arrCategories = ArrayList<Category>()
 var arrTimesheets = ArrayList<Timesheet>()
+var currentCategory : Category? = null
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         val btnChange : Button = findViewById(R.id.btnChange)
         val textView2 : TextView = findViewById(R.id.textView2)
         val btnCateAdd : Button = findViewById(R.id.btnCateAdd)
+        val btnCatList : Button = findViewById(R.id.btnCatList)
         var count = ""
 
         if(arrTimesheets.isNotEmpty()){
@@ -39,6 +43,10 @@ class MainActivity : AppCompatActivity() {
         }
         btnCateAdd.setOnClickListener{
             val intent = Intent(this, category_entry::class.java)
+            startActivity(intent)
+        }
+        btnCatList.setOnClickListener{
+            val intent = Intent(this, categories::class.java)
             startActivity(intent)
         }
     }

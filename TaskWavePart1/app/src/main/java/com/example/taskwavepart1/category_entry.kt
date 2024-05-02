@@ -28,7 +28,7 @@ class category_entry : AppCompatActivity() {
         var check = true
 
         btnCateBack.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, categories::class.java)
             startActivity(intent)
         }
 
@@ -41,7 +41,7 @@ class category_entry : AppCompatActivity() {
             if(check && txtCategoryName.text.isNotEmpty() && txtMinHours.text.isNotEmpty() && txtMaxHours.text.isNotEmpty()){
                 val category = Category(txtCategoryName.text.toString(), txtMinHours.text.toString().toInt(), txtMaxHours.text.toString().toInt())
                 arrCategories.add(category)
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, categories::class.java)
                 startActivity(intent)
             }
             else{
