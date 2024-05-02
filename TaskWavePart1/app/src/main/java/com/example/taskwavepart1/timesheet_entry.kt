@@ -43,10 +43,13 @@ class timesheet_entry : AppCompatActivity() {
         val txtEndTime : EditText = findViewById(R.id.txtEndTime)
         val spinner : Spinner = findViewById(R.id.spinner)
         val btnAddTimesheet : Button = findViewById(R.id.btnAddTimesheet)
-        var txtSelectedDate : TextView = findViewById(R.id.txtSelectedDate)
+        val txtSelectedDate : TextView = findViewById(R.id.txtSelectedDate)
         val btnBack : FloatingActionButton = findViewById(R.id.btnBack)
 
-        var arrCatNames = ArrayList<String>()
+        val sTime = txtStartTime.text.split(":").toTypedArray()
+        val eTime = txtEndTime.text.split(":").toTypedArray()
+
+        val arrCatNames = ArrayList<String>()
 
         arrCatNames.clear()
         for(i in arrCategories.indices){
@@ -93,17 +96,22 @@ class timesheet_entry : AppCompatActivity() {
         }
         btnAddTimesheet.setOnClickListener{
             val spinnerItem = spinner.selectedItem as String
+            var formatCheck = false
+            if (eTime.size == 5 && sTime.size == 5 && eTime.contains(":") && sTime.contains(":")){
+                formatCheck = true
+            }
             for (i in arrCategories.indices){
                 if (spinnerItem == arrCategories[i].name){
                     val selectedCategory : Category = arrCategories[i]
-                    if (txtDescription.text.toString().isNotEmpty() && pickedDate != null && txtStartTime.text.toString().isNotEmpty() && txtEndTime.text.toString().isNotEmpty()){
+                    if (txtDescription.text.toString().isNotEmpty() && pickedDate != null && txtStartTime.text.toString().isNotEmpty() && txtEndTime.text.toString().isNotEmpty()
+                        && formatCheck){
                         val timesheet = Timesheet(txtDescription.text.toString(), selectedCategory, imageUri, pickedDate, txtStartTime.text.toString(), txtEndTime.text.toString())
                         arrTimesheets.add(timesheet)
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                     }
                     else{
-                        Toast.makeText(this, "Fill all fields", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Fill all fields " + eTime.size + " " + sTime.size, Toast.LENGTH_LONG).show()
                         if (txtDescription.text.isEmpty()){
                             txtDescription.error = "Needs to be filled"
                         }
@@ -112,6 +120,18 @@ class timesheet_entry : AppCompatActivity() {
                         }
                         if (txtStartTime.text.isEmpty()){
                             txtStartTime.error = "Needs to be filled"
+                        }
+                        if (!sTime.contains(":")){
+                            txtEndTime.error = "Use format HH:mm"
+                        }
+                        if (!eTime.contains(":")){
+                            txtStartTime.error = "Use format HH:mm"
+                        }
+                        if(sTime.size != 5){
+                            txtStartTime.error = "Use format HH:mm"
+                        }
+                        if(eTime.size != 5){
+                            txtEndTime.error = "Use format HH:mm"
                         }
                     }
                     break

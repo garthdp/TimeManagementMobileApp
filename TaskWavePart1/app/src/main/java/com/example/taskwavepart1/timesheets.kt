@@ -40,13 +40,19 @@ class timesheets : AppCompatActivity() {
         }
         val feed : RecyclerView = findViewById(R.id.rcTimesheets)
         val timesheetAdapter = TimesheetAdpater()
+        var catTimesheets = ArrayList<Timesheet>()
 
+        for (i in arrTimesheets.indices){
+            if (arrTimesheets[i].category == currentCategory){
+                catTimesheets.add(arrTimesheets[i])
+            }
+        }
         feed.apply {
             layoutManager = LinearLayoutManager(this@timesheets)
             adapter=timesheetAdapter
         }
         Handler(Looper.getMainLooper()).post{
-            timesheetAdapter.submitList(arrTimesheets)
+            timesheetAdapter.submitList(catTimesheets)
         }
 
         /*
