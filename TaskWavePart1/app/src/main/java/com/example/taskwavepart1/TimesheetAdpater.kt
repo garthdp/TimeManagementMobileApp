@@ -25,7 +25,7 @@ class TimesheetAdpater : ListAdapter<Timesheet, TimesheetAdpater.TimesheetAdpate
     {
         val inflater = LayoutInflater.from(parent.context)
         return TimesheetAdpater(inflater.inflate(
-            R.layout.category_item,parent,false
+            R.layout.timesheet_item,parent,false
         ))
     }
 
@@ -34,7 +34,7 @@ class TimesheetAdpater : ListAdapter<Timesheet, TimesheetAdpater.TimesheetAdpate
         val timesheet = getItem(position)
         holder.itemView.findViewById<TextView>(R.id.txtTsDate).text = timesheet.date
         holder.itemView.findViewById<TextView>(R.id.txtTsStartTime).text = timesheet.startTime
-        holder.itemView.findViewById<TextView>(R.id.txtCateItemMaxHrs).text = timesheet.endTime
+        holder.itemView.findViewById<TextView>(R.id.txtTsEndTime).text = timesheet.endTime
         holder.itemView.findViewById<ImageView>(R.id.imgTsItem).setImageURI(timesheet.image)
         holder.itemView.setOnClickListener{
             if (onClickListener != null){

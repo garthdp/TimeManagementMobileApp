@@ -34,7 +34,7 @@ class CategoryAdapter : ListAdapter<Category, CategoryAdapter.CategoryAdapter>(C
         val category = getItem(position)
         holder.itemView.findViewById<TextView>(R.id.txtCateItemName).text = category.name
         holder.itemView.findViewById<TextView>(R.id.txtCateItemMinHrs).text = "Min: " + category.minHours.toString() + "hrs"
-        holder.itemView.findViewById<TextView>(R.id.txtCateItemMaxHrs).text = "Min: " + category.maxHours.toString() + "hrs"
+        holder.itemView.findViewById<TextView>(R.id.txtCateItemMaxHrs).text = "Max: " + category.maxHours.toString() + "hrs"
         holder.itemView.setOnClickListener{
             if (onClickListener != null){
                 onClickListener!!.onClick(position, category)

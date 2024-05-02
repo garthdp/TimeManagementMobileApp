@@ -84,7 +84,7 @@ class timesheet_entry : AppCompatActivity() {
             }
         }
         btnBack.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, timesheets::class.java)
             startActivity(intent)
         }
         btnPickImage.setOnClickListener {

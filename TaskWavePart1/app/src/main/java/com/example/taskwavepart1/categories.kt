@@ -25,6 +25,7 @@ class categories : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        currentCategory = null
         val btnCateListBack : FloatingActionButton = findViewById(R.id.btnCateListBack)
         val btnCateListAdd : FloatingActionButton = findViewById(R.id.btnCateListAdd)
 

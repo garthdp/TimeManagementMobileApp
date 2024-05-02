@@ -58,7 +58,7 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="2dp"
         android:ems="10"
-        android:hint="Min Hours"
+        android:hint="Min Daily Hours"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="@+id/txtCategoryName"
         app:layout_constraintTop_toBottomOf="@+id/txtCategoryName" />
@@ -71,7 +71,7 @@
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:ems="10"
-        android:hint="Max Hours"
+        android:hint="Max Daily Hours"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
