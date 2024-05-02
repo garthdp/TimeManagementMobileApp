@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 var arrCategories = ArrayList<Category>()
 var arrTimesheets = ArrayList<Timesheet>()
 var currentCategory : Category? = null
+var currentTimesheet : Timesheet? = null
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")

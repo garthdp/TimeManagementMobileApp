@@ -19,7 +19,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.timepicker.TimeFormat
+import java.sql.Time
 import java.text.SimpleDateFormat
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
 import java.util.Date
 
 class timesheet_entry : AppCompatActivity() {
@@ -45,9 +49,6 @@ class timesheet_entry : AppCompatActivity() {
         val btnAddTimesheet : Button = findViewById(R.id.btnAddTimesheet)
         val txtSelectedDate : TextView = findViewById(R.id.txtSelectedDate)
         val btnBack : FloatingActionButton = findViewById(R.id.btnBack)
-
-        val sTime = txtStartTime.text.split(":").toTypedArray()
-        val eTime = txtEndTime.text.split(":").toTypedArray()
 
         val arrCatNames = ArrayList<String>()
 
@@ -96,48 +97,71 @@ class timesheet_entry : AppCompatActivity() {
         }
         btnAddTimesheet.setOnClickListener{
             val spinnerItem = spinner.selectedItem as String
-            var formatCheck = false
-            if (eTime.size == 5 && sTime.size == 5 && eTime.contains(":") && sTime.contains(":")){
-                formatCheck = true
-            }
-            for (i in arrCategories.indices){
-                if (spinnerItem == arrCategories[i].name){
-                    val selectedCategory : Category = arrCategories[i]
-                    if (txtDescription.text.toString().isNotEmpty() && pickedDate != null && txtStartTime.text.toString().isNotEmpty() && txtEndTime.text.toString().isNotEmpty()
-                        && formatCheck){
-                        val timesheet = Timesheet(txtDescription.text.toString(), selectedCategory, imageUri, pickedDate, txtStartTime.text.toString(), txtEndTime.text.toString())
+            if (txtDescription.text.toString().isNotEmpty() && pickedDate != null
+                && txtStartTime.text.toString().isNotEmpty() && txtEndTime.text.toString().isNotEmpty()
+                && txtStartTime.text.length == 5 && txtEndTime.text.length == 5 && txtEndTime.text.contains(":") && txtStartTime.text.contains(":")
+                && txtStartTime.text.toString().substring(0, 2).toInt() <= 24 && txtStartTime.text.toString().substring(3, 5).toInt() < 60
+                && txtEndTime.text.toString().substring(0, 2).toInt() <= 24 && txtEndTime.text.toString().substring(3, 5).toInt() < 60
+                && txtStartTime.text.toString().substring(0, 2).toInt() < txtEndTime.text.toString().substring(0, 2).toInt()) {
+                for (i in arrCategories.indices) {
+                    if (spinnerItem == arrCategories[i].name) {
+                        val selectedCategory: Category = arrCategories[i]
+                        val timesheet = Timesheet(
+                            txtDescription.text.toString(),
+                            selectedCategory,
+                            imageUri,
+                            pickedDate,
+                            txtStartTime.text.toString(),
+                            txtEndTime.text.toString()
+                        )
                         arrTimesheets.add(timesheet)
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, timesheets::class.java)
                         startActivity(intent)
-                    }
-                    else{
-                        Toast.makeText(this, "Fill all fields " + eTime.size + " " + sTime.size, Toast.LENGTH_LONG).show()
-                        if (txtDescription.text.isEmpty()){
-                            txtDescription.error = "Needs to be filled"
-                        }
-                        if (txtEndTime.text.isEmpty()){
-                            txtEndTime.error = "Needs to be filled"
-                        }
-                        if (txtStartTime.text.isEmpty()){
-                            txtStartTime.error = "Needs to be filled"
-                        }
-                        if (!sTime.contains(":")){
-                            txtEndTime.error = "Use format HH:mm"
-                        }
-                        if (!eTime.contains(":")){
-                            txtStartTime.error = "Use format HH:mm"
-                        }
-                        if(sTime.size != 5){
-                            txtStartTime.error = "Use format HH:mm"
-                        }
-                        if(eTime.size != 5){
-                            txtEndTime.error = "Use format HH:mm"
-                        }
                     }
                     break
                 }
             }
-
+            else{
+                if (txtDescription.text.isEmpty()){
+                    txtDescription.error = "Needs to be filled"
+                }
+                if (txtEndTime.text.isEmpty()){
+                    txtEndTime.error = "Needs to be filled"
+                }
+                if (txtStartTime.text.isEmpty()){
+                    txtStartTime.error = "Needs to be filled"
+                }
+                if (!txtStartTime.text.contains(":")){
+                    txtEndTime.error = "Use format HH:mm"
+                }
+                if (!txtEndTime.text.contains(":")){
+                    txtStartTime.error = "Use format HH:mm"
+                }
+                if(txtStartTime.text.length != 5){
+                    txtStartTime.error = "Use format HH:mm"
+                }
+                if(txtEndTime.text.length != 5){
+                    txtEndTime.error = "Use format HH:mm"
+                }
+                if(txtStartTime.text.toString().substring(0, 2).toInt() >= 24){
+                    txtStartTime.error = "Hours can't be more than 24"
+                }
+                if(txtStartTime.text.toString().substring(3, 5).toInt() > 60){
+                    txtStartTime.error = "Minutes can't be more than 59"
+                }
+                if(txtEndTime.text.toString().substring(0, 2).toInt() >= 24){
+                    txtEndTime.error = "Hours can't be more than 24"
+                }
+                if(txtEndTime.text.toString().substring(3, 5).toInt() > 60){
+                    txtEndTime.error = "Hours can't be more than 24"
+                }
+                if(txtStartTime.text.toString().substring(0, 2).toInt() > txtEndTime.text.toString().substring(0, 2).toInt()){
+                    txtEndTime.error = "End time can't be before start time"
+                }
+                if(txtStartTime.text.toString().substring(0, 2).toInt() == txtEndTime.text.toString().substring(0, 2).toInt()){
+                    txtEndTime.error = "Start and end times can't be in the same hour"
+                }
+            }
         }
     }
     /*

@@ -24,6 +24,7 @@ class timesheets : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        currentTimesheet = null
         val txtTsCatName : TextView = findViewById(R.id.txtTsCatName)
         val btnTsListBack : FloatingActionButton = findViewById(R.id.btnTsListBack)
         val btnTsListAdd : FloatingActionButton = findViewById(R.id.btnTsListAdd)
@@ -64,7 +65,8 @@ class timesheets : AppCompatActivity() {
         */
         timesheetAdapter.setOnClickListener(object : TimesheetAdpater.OnClickListener{
             override fun onClick(position: Int, model: Timesheet) {
-                val intent = Intent(this@timesheets, timesheets::class.java)
+                currentTimesheet = model
+                val intent = Intent(this@timesheets, timesheet_details::class.java)
                 startActivity(intent)
             }
         })
