@@ -57,16 +57,30 @@ class timesheets : AppCompatActivity() {
         loadList(arrTimesheet)
 
         btnFilterDate1.setOnClickListener {
-            date1 = calender()
-            Toast.makeText(this, "$date1 is selected", Toast.LENGTH_LONG).show()
-            btnFilterDate1.text = date1
-            btnFilterDate1.textSize = 10F
+            val datePicker = MaterialDatePicker.Builder.datePicker().build()
+            datePicker.show(supportFragmentManager, "DatePicker")
+
+            datePicker.addOnPositiveButtonClickListener {
+                // formatting date in dd-mm-yyyy format.
+                val dateFormatter = SimpleDateFormat("dd/MM/yyyy")
+                date1 = dateFormatter.format(Date(it)).toString()
+                Toast.makeText(this, "$date1 is selected", Toast.LENGTH_LONG).show()
+                btnFilterDate1.text = date1
+                btnFilterDate1.textSize = 10F
+            }
         }
         btnFilterDate2.setOnClickListener {
-            date1 = calender()
-            Toast.makeText(this, "$date2 is selected", Toast.LENGTH_LONG).show()
-            btnFilterDate2.text = date2
-            btnFilterDate2.textSize = 10F
+            val datePicker = MaterialDatePicker.Builder.datePicker().build()
+            datePicker.show(supportFragmentManager, "DatePicker")
+
+            datePicker.addOnPositiveButtonClickListener {
+                // formatting date in dd-mm-yyyy format.
+                val dateFormatter = SimpleDateFormat("dd/MM/yyyy")
+                date2 = dateFormatter.format(Date(it)).toString()
+                Toast.makeText(this, "$date2 is selected", Toast.LENGTH_LONG).show()
+                btnFilterDate2.text = date2
+                btnFilterDate2.textSize = 10F
+            }
         }
 
         btnFilter.setOnClickListener {
@@ -81,6 +95,9 @@ class timesheets : AppCompatActivity() {
                     arrFilteredList.add(arrTimesheets[i])
                     totalCategoryHours += endTimeTotal - startTimeTotal
 
+                    loadList(arrFilteredList)
+                }
+                else{
                     loadList(arrFilteredList)
                 }
             }
@@ -125,16 +142,5 @@ class timesheets : AppCompatActivity() {
             }
         })
     }
-    private fun calender() : String{
-        val datePicker = MaterialDatePicker.Builder.datePicker().build()
-        datePicker.show(supportFragmentManager, "DatePicker")
-        var date = ""
 
-        datePicker.addOnPositiveButtonClickListener {
-            // formatting date in dd-mm-yyyy format.
-            val dateFormatter = SimpleDateFormat("dd/MM/yyyy")
-            date = dateFormatter.format(Date(it)).toString()
-        }
-        return date
-    }
 }

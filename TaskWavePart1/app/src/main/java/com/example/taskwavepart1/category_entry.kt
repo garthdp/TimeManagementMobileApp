@@ -38,11 +38,30 @@ class category_entry : AppCompatActivity() {
                     check = false
                 }
             }
-            if(check && txtCategoryName.text.isNotEmpty() && txtMinHours.text.isNotEmpty() && txtMaxHours.text.isNotEmpty() && txtMaxHours.text.toString().toInt() < 24 && txtMinHours.text.toString().toInt() <= txtMaxHours.text.toString().toInt()){
-                val category = Category(txtCategoryName.text.toString(), currentUser, txtMinHours.text.toString().toInt(), txtMaxHours.text.toString().toInt())
-                arrCategories.add(category)
-                val intent = Intent(this, categories::class.java)
-                startActivity(intent)
+            if(txtCategoryName.text.isNotEmpty() && txtMinHours.text.isNotEmpty() && txtMaxHours.text.isNotEmpty())
+            {
+                if(check && txtMaxHours.text.toString().toInt() <= 12 && txtMinHours.text.toString().toInt() < txtMaxHours.text.toString().toInt())
+                {
+                    val category = Category(txtCategoryName.text.toString(), currentUser, txtMinHours.text.toString().toInt(), txtMaxHours.text.toString().toInt())
+                    arrCategories.add(category)
+                    val intent = Intent(this, categories::class.java)
+                    startActivity(intent)
+                }
+                else
+                {
+                    if (!check){
+                        txtCategoryName.error = "Name already in use"
+                    }
+                    if (txtMaxHours.text.toString().toInt() > 12){
+                        txtMaxHours.error = "Can't be bigger than 12hrs"
+                    }
+                    if (txtMinHours.text.toString().toInt() >= txtMaxHours.text.toString().toInt()){
+                        txtMinHours.error = "Min can't be bigger than max"
+                    }
+                    if (txtMinHours.text.toString().toInt() == txtMaxHours.text.toString().toInt()){
+                        txtMinHours.error = "Min can't be equal to max"
+                    }
+                }
             }
             else{
                 if (txtCategoryName.text.isEmpty()){
@@ -53,15 +72,6 @@ class category_entry : AppCompatActivity() {
                 }
                 if (txtMinHours.text.isEmpty()){
                     txtMinHours.error = "Needs to be filled"
-                }
-                if (!check){
-                    txtCategoryName.error = "Name already in use"
-                }
-                if (txtMaxHours.text.toString().toInt() > 24){
-                    txtMaxHours.error = "Can't be bigger than 24hrs"
-                }
-                if (txtMinHours.text.toString().toInt() >= txtMaxHours.text.toString().toInt()){
-                    txtMinHours.error = "Min can't be bigger than max"
                 }
             }
         }
