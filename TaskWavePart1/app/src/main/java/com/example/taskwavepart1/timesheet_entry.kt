@@ -129,23 +129,18 @@ class timesheet_entry : AppCompatActivity() {
                 }
                 else{
                     if(txtStartTime.text.toString().substring(0, 2).toInt() >= 24){
-                        txtStartTime.error = null
                         txtStartTime.error = "Hours can't be more than 23"
                     }
                     if(txtStartTime.text.toString().substring(3, 5).toInt() > 59){
-                        txtStartTime.error = null
                         txtStartTime.error = "Minutes can't be more than 59"
                     }
                     if(txtEndTime.text.toString().substring(0, 2).toInt() >= 24){
-                        txtEndTime.error = null
                         txtEndTime.error = "Hours can't be more than 23"
                     }
                     if(txtEndTime.text.toString().substring(3, 5).toInt() > 59){
-                        txtEndTime.error = null
                         txtEndTime.error = "Minutes can't be more than 59"
                     }
                     if(startTimeTotal > endTimeTotal){
-                        txtEndTime.error = null
                         txtEndTime.error = "End time can't be before start time"
                     }
                 }
@@ -155,31 +150,24 @@ class timesheet_entry : AppCompatActivity() {
                     Toast.makeText(this, "Date required", Toast.LENGTH_LONG).show()
                 }
                 if (txtDescription.text.isEmpty()){
-                    txtDescription.error = null
                     txtDescription.error = "Needs to be filled"
                 }
                 if (txtEndTime.text.isEmpty()){
-                    txtEndTime.error = null
                     txtEndTime.error = "Needs to be filled"
                 }
                 if(txtEndTime.text.length != 5 && txtEndTime.text.isNotEmpty()){
-                    txtEndTime.error = null
                     txtEndTime.error = "Use format HH:mm"
                 }
                 if (txtStartTime.text.isEmpty()){
-                    txtStartTime.error = null
                     txtStartTime.error = "Needs to be filled"
                 }
                 if(txtStartTime.text.length != 5 && txtStartTime.text.isNotEmpty()){
-                    txtStartTime.error = null
                     txtStartTime.error = "Use format HH:mm"
                 }
                 if (!txtStartTime.text.contains(":") && txtStartTime.text.isNotEmpty()){
-                    txtStartTime.error = null
                     txtStartTime.error = "Use format HH:mm"
                 }
                 if (!txtEndTime.text.contains(":") && txtEndTime.text.isNotEmpty()){
-                    txtEndTime.error = null
                     txtEndTime.error = "Use format HH:mm"
                 }
             }
