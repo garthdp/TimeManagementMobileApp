@@ -5,49 +5,40 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".timesheets"
-    android:background="@drawable/backg">
+    android:background="@drawable/backg"
+    tools:context=".timesheets">
 
     <TextView
         android:id="@+id/txtTsCatName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:layout_marginBottom="30dp"
         android:text="Categories"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/rcTimesheets"
+        app:layout_constraintBottom_toTopOf="@+id/cardView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcTimesheets"
-        android:layout_width="409dp"
-        android:layout_height="580dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="7dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnTsListAdd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTsListAdd" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="150dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="79dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnTsListBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="85dp"
-        android:layout_marginBottom="7dp"
+        android:layout_marginEnd="310dp"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/rcTimesheets"
-        app:layout_constraintEnd_toStartOf="@+id/txtTsCatName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
@@ -56,14 +47,100 @@
         android:id="@+id/btnTsListAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="324dp"
-        android:layout_marginEnd="31dp"
+        android:layout_marginStart="325dp"
+        android:layout_marginEnd="30dp"
         android:layout_marginBottom="9dp"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rcTimesheets"
         app:srcCompat="@android:drawable/ic_input_add" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="409dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="290dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="Filter By:"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btnFilterDate1"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:layout_marginBottom="10dp"
+            android:text="Date"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btnFilterDate2"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="260dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:layout_marginBottom="10dp"
+            android:text="Date"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="230dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="-"
+            android:textSize="50dp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txtTotalHours"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:text="Total Hours: "
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/btnTsListAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rcTimesheets" />
+
+    <Button
+        android:id="@+id/btnFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@android:color/holo_blue_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTotalHours" />
 </androidx.constraintlayout.widget.ConstraintLayout>
