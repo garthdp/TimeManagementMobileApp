@@ -45,8 +45,16 @@ class categories : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@categories)
             adapter=categoryAdapter
         }
+
+        val arrUserCategories = ArrayList<Category>()
+        for(i in arrCategories.indices){
+            if (arrCategories[i].user == currentUser){
+                arrUserCategories.add(arrCategories[i])
+            }
+        }
+
         Handler(Looper.getMainLooper()).post{
-            categoryAdapter.submitList(arrCategories)
+            categoryAdapter.submitList(arrUserCategories)
         }
 
         /*

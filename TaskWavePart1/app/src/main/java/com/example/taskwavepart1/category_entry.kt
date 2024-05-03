@@ -39,7 +39,7 @@ class category_entry : AppCompatActivity() {
                 }
             }
             if(check && txtCategoryName.text.isNotEmpty() && txtMinHours.text.isNotEmpty() && txtMaxHours.text.isNotEmpty() && txtMaxHours.text.toString().toInt() < 24 && txtMinHours.text.toString().toInt() <= txtMaxHours.text.toString().toInt()){
-                val category = Category(txtCategoryName.text.toString(), txtMinHours.text.toString().toInt(), txtMaxHours.text.toString().toInt())
+                val category = Category(txtCategoryName.text.toString(), currentUser, txtMinHours.text.toString().toInt(), txtMaxHours.text.toString().toInt())
                 arrCategories.add(category)
                 val intent = Intent(this, categories::class.java)
                 startActivity(intent)

@@ -4,16 +4,21 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.loginfunction.User
 
 var arrCategories = ArrayList<Category>()
 var arrTimesheets = ArrayList<Timesheet>()
 var currentCategory : Category? = null
 var currentTimesheet : Timesheet? = null
+var arUsers = ArrayList<User>()
+var currentUser : User? = null
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -26,28 +31,52 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val btnChange : Button = findViewById(R.id.btnChange)
-        val textView2 : TextView = findViewById(R.id.textView2)
-        val btnCateAdd : Button = findViewById(R.id.btnCateAdd)
-        val btnCatList : Button = findViewById(R.id.btnCatList)
-        var count = ""
+        val bLogin : Button = findViewById(R.id.btnLogin);
+        val bSignup : Button = findViewById(R.id.btnSignup);
+        val user : EditText = findViewById(R.id.edtUsername)
+        val pass : EditText = findViewById(R.id.edtPassword)
+        var login = false
 
-        if(arrTimesheets.isNotEmpty()){
-            count = arrTimesheets[0].description + arrTimesheets[0].date + arrTimesheets[0].startTime + arrTimesheets[0].image
+        bLogin.setOnClickListener(){
+            for (i in arUsers.indices)
+            {
+                if ((arUsers[i].Username == user.text.toString()) && arUsers[i].Password == pass.text.toString())
+                {
+                    login = true
+                    Toast.makeText(
+                        this,
+                        "User verified",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    currentUser = arUsers[i]
+                    val intent = Intent(this, categories::class.java)
+                    startActivity(intent)
+                }
+            }
+            if (pass.text.isEmpty() || user.text.isEmpty()){
+                Toast.makeText(
+                    this,
+                    "Fill in all fields",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            else if (!login){
+                Toast.makeText(
+                    this,
+                    "Imposter",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            if (user.text.isEmpty()){
+                user.error = "Fill in"
+            }
+            if (pass.text.isEmpty()){
+                pass.error = "Fill in"
+            }
         }
 
-        textView2.text = count
-
-        btnChange.setOnClickListener{
-            val intent = Intent(this, timesheet_entry::class.java)
-            startActivity(intent)
-        }
-        btnCateAdd.setOnClickListener{
-            val intent = Intent(this, category_entry::class.java)
-            startActivity(intent)
-        }
-        btnCatList.setOnClickListener{
-            val intent = Intent(this, categories::class.java)
+        bSignup.setOnClickListener(){
+            val intent = Intent(this, sign_up::class.java)
             startActivity(intent)
         }
     }

@@ -44,7 +44,7 @@ class timesheets : AppCompatActivity() {
         var catTimesheets = ArrayList<Timesheet>()
 
         for (i in arrTimesheets.indices){
-            if (arrTimesheets[i].category == currentCategory){
+            if (arrTimesheets[i].category == currentCategory && currentUser == arrTimesheets[i].category.user){
                 catTimesheets.add(arrTimesheets[i])
             }
         }
