@@ -34,7 +34,7 @@ class category_entry : AppCompatActivity() {
 
         btnAddCategory.setOnClickListener{
             for(i in arrCategories.indices){
-                if (txtCategoryName.text.toString() == arrCategories[i].name){
+                if (txtCategoryName.text.toString() == arrCategories[i].name && currentUser == arrCategories[i].user){
                     check = false
                 }
             }
