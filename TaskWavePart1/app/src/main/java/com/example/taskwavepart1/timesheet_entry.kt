@@ -53,7 +53,9 @@ class timesheet_entry : AppCompatActivity() {
 
         arrCatNames.clear()
         for(i in arrCategories.indices){
-            arrCatNames.add(arrCategories[i].name)
+            if (arrCategories[i].user == currentUser){
+                arrCatNames.add(arrCategories[i].name)
+            }
         }
         if (spinner != null){
             /*
