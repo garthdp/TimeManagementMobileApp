@@ -12,9 +12,15 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 import java.util.concurrent.Executors
 
 class categories : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
+// ...
+// Initialize Firebase Auth
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +31,13 @@ class categories : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        auth = FirebaseAuth.getInstance()
         currentCategory = null
         val btnCateListBack : FloatingActionButton = findViewById(R.id.btnCateListBack)
         val btnCateListAdd : FloatingActionButton = findViewById(R.id.btnCateListAdd)
 
         btnCateListBack.setOnClickListener{
+            Firebase.auth.signOut()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }

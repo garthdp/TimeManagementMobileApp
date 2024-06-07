@@ -3,16 +3,20 @@ package com.example.taskwavepart1
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.loginfunction.User
+import com.google.firebase.auth.FirebaseAuth
 
-class sign_up : AppCompatActivity() {
+public class sign_up : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,69 +32,93 @@ class sign_up : AppCompatActivity() {
         val txtSignUpCheckPassword : EditText = findViewById(R.id.txtSignUpCheckPassword)
         val btnSignSignup : Button = findViewById(R.id.btnSignSignup)
         val btnSignLogin : Button = findViewById(R.id.btnSignLogin)
-        var checkUsers = false
+        val progressBar : ProgressBar = findViewById(R.id.progressBar)
+        auth = FirebaseAuth.getInstance()
 
         btnSignSignup.setOnClickListener{
-            for(i in arUsers.indices){
-                if(txtSignUpUsername.text.toString() == arUsers[i].Username){
-                    checkUsers = true
-                }
-            }
-            if (txtSignUpPassword.text.toString() == txtSignUpCheckPassword.text.toString()
-                && txtSignUpPassword.text.isNotEmpty() && txtSignUpUsername.text.isNotEmpty() && txtSignUpCheckPassword.text.isNotEmpty()
-                && !checkUsers){
-                arUsers.add(User(txtSignUpUsername.text.toString(),txtSignUpPassword.text.toString()))
+            var isEmptyCheck = false
+            var passMatchCheck = true
+            var isLong = true
+            progressBar.visibility = View.VISIBLE
+            if (txtSignUpPassword.text.isEmpty()){
+                txtSignUpPassword.error = "Fill in"
                 Toast.makeText(
                     this,
-                    "User created",
+                    "Fill in all fields",
                     Toast.LENGTH_SHORT
                 ).show()
+                progressBar.visibility = View.INVISIBLE
+                isEmptyCheck = true
+            }
+            if (txtSignUpCheckPassword.text.isEmpty()){
+                txtSignUpCheckPassword.error = "Fill in"
+                Toast.makeText(
+                    this,
+                    "Fill in all fields",
+                    Toast.LENGTH_SHORT
+                ).show()
+                progressBar.visibility = View.INVISIBLE
+                isEmptyCheck = true
+            }
+            if (txtSignUpUsername.text.isEmpty()){
+                txtSignUpUsername.error = "Fill in"
+                Toast.makeText(
+                    this,
+                    "Fill in all fields",
+                    Toast.LENGTH_SHORT
+                ).show()
+                progressBar.visibility = View.INVISIBLE
+                isEmptyCheck = true
+            }
+            if (!isEmptyCheck && txtSignUpPassword.text.toString() != txtSignUpCheckPassword.text.toString() ){
+                txtSignUpPassword.error = "Passwords do not match"
+                txtSignUpCheckPassword.error = "Passwords do not match"
+                Toast.makeText(
+                    this,
+                    "Passwords do not match",
+                    Toast.LENGTH_SHORT
+                ).show()
+                progressBar.visibility = View.INVISIBLE
+                passMatchCheck = false
+            }
+            if (passMatchCheck && txtSignUpPassword.length() < 6){
+                txtSignUpPassword.error = "Password needs to be 6 characters long"
+                txtSignUpCheckPassword.error = "Password needs to be 6 characters long"
+                Toast.makeText(
+                    this,
+                    "Password needs to be 6 characters long",
+                    Toast.LENGTH_SHORT
+                ).show()
+                progressBar.visibility = View.INVISIBLE
+                isLong = false
+            }
+            if (!isEmptyCheck && passMatchCheck && isLong){
+                var email = txtSignUpUsername.text.toString()
+                var password = txtSignUpPassword.text.toString()
 
-                val intent = Intent(this,MainActivity::class.java)
-                startActivity(intent)
+                auth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(
+                                baseContext,
+                                "Account created",
+                                Toast.LENGTH_SHORT,
+                            ).show()
+                            progressBar.visibility = View.INVISIBLE
+                            val intent = Intent(this,MainActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            Toast.makeText(
+                                baseContext,
+                                "Sign in failed",
+                                Toast.LENGTH_SHORT,
+                            ).show()
+                            progressBar.visibility = View.INVISIBLE
+                        }
+                    }
             }
             else{
-                if (txtSignUpPassword.text.toString() != txtSignUpCheckPassword.text.toString() ){
-                    txtSignUpPassword.error = "Passwords do not match"
-                    txtSignUpCheckPassword.error = "Passwords do not match"
-                    Toast.makeText(
-                        this,
-                        "Passwords do not match",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                if (checkUsers){
-                    txtSignUpUsername.error = "Username taken"
-                    Toast.makeText(
-                        this,
-                        "Username taken",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                if (txtSignUpPassword.text.isEmpty()){
-                    txtSignUpPassword.error = "Fill in"
-                    Toast.makeText(
-                        this,
-                        "Fill in all fields",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                if (txtSignUpCheckPassword.text.isEmpty()){
-                    txtSignUpCheckPassword.error = "Fill in"
-                    Toast.makeText(
-                        this,
-                        "Fill in all fields",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                if (txtSignUpUsername.text.isEmpty()){
-                    txtSignUpUsername.error = "Fill in"
-                    Toast.makeText(
-                        this,
-                        "Fill in all fields",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
+                progressBar.visibility = View.INVISIBLE
             }
         }
         btnSignLogin.setOnClickListener {

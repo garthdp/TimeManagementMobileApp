@@ -3,8 +3,10 @@ package com.example.taskwavepart1
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -12,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.loginfunction.User
+import com.google.firebase.auth.FirebaseAuth
 
 var arrCategories = ArrayList<Category>()
 var arrTimesheets = ArrayList<Timesheet>()
@@ -21,6 +24,16 @@ var arUsers = ArrayList<User>()
 var currentUser : User? = null
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
+    public override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            val intent = Intent(this, categories::class.java)
+            startActivity(intent)
+        }
+    }
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,43 +48,41 @@ class MainActivity : AppCompatActivity() {
         val bSignup : Button = findViewById(R.id.btnSignup);
         val user : EditText = findViewById(R.id.edtUsername)
         val pass : EditText = findViewById(R.id.edtPassword)
-        var login = false
+        val progressBar : ProgressBar = findViewById(R.id.progressBar)
+        auth = FirebaseAuth.getInstance()
 
         bLogin.setOnClickListener(){
-            for (i in arUsers.indices)
-            {
-                if ((arUsers[i].Username == user.text.toString()) && arUsers[i].Password == pass.text.toString())
-                {
-                    login = true
-                    Toast.makeText(
-                        this,
-                        "User verified",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    currentUser = arUsers[i]
-                    val intent = Intent(this, categories::class.java)
-                    startActivity(intent)
-                }
-            }
-            if (pass.text.isEmpty() || user.text.isEmpty()){
-                Toast.makeText(
-                    this,
-                    "Fill in all fields",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-            else if (!login){
-                Toast.makeText(
-                    this,
-                    "Imposter",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
+            var isEmptyCheck = false
+            progressBar.visibility = View.VISIBLE
             if (user.text.isEmpty()){
                 user.error = "Fill in"
+                progressBar.visibility = View.INVISIBLE
+                isEmptyCheck = true
             }
             if (pass.text.isEmpty()){
                 pass.error = "Fill in"
+                progressBar.visibility = View.INVISIBLE
+                isEmptyCheck = true
+            }
+            if (!isEmptyCheck) {
+                var email = user.text.toString()
+                var password = pass.text.toString()
+                auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            val user = auth.currentUser
+                            progressBar.visibility = View.INVISIBLE
+                            val intent = Intent(this, categories::class.java)
+                            startActivity(intent)
+                        } else {
+                            progressBar.visibility = View.INVISIBLE
+                            Toast.makeText(
+                                baseContext,
+                                "Incorrect details",
+                                Toast.LENGTH_SHORT,
+                            ).show()
+                        }
+                    }
             }
         }
 
