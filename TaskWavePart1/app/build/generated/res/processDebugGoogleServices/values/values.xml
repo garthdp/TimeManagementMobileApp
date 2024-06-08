@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">274341236336</string>
+    <string name="google_api_key" translatable="false">AIzaSyBU1NIXxMtki_VMsPxaIQQnBMIrn5Z_Oo4</string>
+    <string name="google_app_id" translatable="false">1:274341236336:android:7bc9604695b14ef2a0eeb5</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBU1NIXxMtki_VMsPxaIQQnBMIrn5Z_Oo4</string>
+    <string name="google_storage_bucket" translatable="false">poedb-ab1be.appspot.com</string>
+    <string name="project_id" translatable="false">poedb-ab1be</string>
+</resources>

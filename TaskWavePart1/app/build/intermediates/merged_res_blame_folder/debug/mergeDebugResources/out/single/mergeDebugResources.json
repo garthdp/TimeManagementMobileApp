@@ -1,0 +1,118 @@
+[
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/drawable_backg.png.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/drawable/backg.png"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/layout_activity_timesheet_details.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/layout/activity_timesheet_details.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/layout_activity_categories.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/layout/activity_categories.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/layout_activity_sign_up.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/layout/activity_sign_up.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/xml_backup_rules.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/layout_activity_main.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/drawable_taskwave_logo.png.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/drawable/taskwave_logo.png"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/layout_activity_timesheets.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/layout/activity_timesheets.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/layout_spinner_list.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/layout/spinner_list.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/layout_timesheet_item.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/layout/timesheet_item.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/layout_category_item.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/layout/category_item.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/layout_activity_timesheet_entry.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/layout/activity_timesheet_entry.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/layout_activity_category_entry.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/layout/activity_category_entry.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/drawable_camera.jpg.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/drawable/camera.jpg"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-debug-39:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.taskwavepart1.app-main-41:/mipmap-hdpi/ic_launcher_round.webp"
+    }
+]

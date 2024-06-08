@@ -42,8 +42,6 @@ class categories : AppCompatActivity() {
         val btnCateListAdd : FloatingActionButton = findViewById(R.id.btnCateListAdd)
         auth = FirebaseAuth.getInstance()
         rootNode = FirebaseDatabase.getInstance()
-        userReference = rootNode.getReference("users")
-        userReference.child("Test").setValue("Hello, World!")
 
         btnCateListBack.setOnClickListener{
             Firebase.auth.signOut()
@@ -51,6 +49,8 @@ class categories : AppCompatActivity() {
             startActivity(intent)
         }
         btnCateListAdd.setOnClickListener{
+            userReference = rootNode.getReference("users")
+            userReference.child("Test").setValue("Hello, World!")
             val intent = Intent(this, category_entry::class.java)
             startActivity(intent)
         }
