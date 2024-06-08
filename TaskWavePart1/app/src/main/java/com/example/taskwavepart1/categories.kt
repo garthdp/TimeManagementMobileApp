@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,10 +16,14 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import java.util.concurrent.Executors
 
 class categories : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    private lateinit var rootNode: FirebaseDatabase
+    private lateinit var userReference : DatabaseReference
 // ...
 // Initialize Firebase Auth
     @SuppressLint("MissingInflatedId")
@@ -35,6 +40,10 @@ class categories : AppCompatActivity() {
         currentCategory = null
         val btnCateListBack : FloatingActionButton = findViewById(R.id.btnCateListBack)
         val btnCateListAdd : FloatingActionButton = findViewById(R.id.btnCateListAdd)
+        auth = FirebaseAuth.getInstance()
+        rootNode = FirebaseDatabase.getInstance()
+        userReference = rootNode.getReference("users")
+        userReference.child("Test").setValue("Hello, World!")
 
         btnCateListBack.setOnClickListener{
             Firebase.auth.signOut()
