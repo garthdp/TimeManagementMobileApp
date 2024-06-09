@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="ic_launcher_background">#FBF9ED</color>
     <color name="white">#FFFFFFFF</color>
-    <string name="app_name">TaskWavePart1</string>
+    <string name="app_name">TaskWave</string>
     <string name="firebase_database_url" translatable="false">https://poedb-ab1be-default-rtdb.europe-west1.firebasedatabase.app</string>
     <string name="gcm_defaultSenderId" translatable="false">274341236336</string>
     <string name="google_api_key" translatable="false">AIzaSyBU1NIXxMtki_VMsPxaIQQnBMIrn5Z_Oo4</string>

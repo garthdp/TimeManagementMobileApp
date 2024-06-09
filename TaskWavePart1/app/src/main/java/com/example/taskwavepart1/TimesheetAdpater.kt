@@ -1,18 +1,11 @@
 package com.example.taskwavepart1
 
-import android.content.Intent
-import android.os.Build
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 

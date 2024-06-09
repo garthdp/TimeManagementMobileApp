@@ -18,12 +18,6 @@
             android:name=".graphTest"
             android:exported="false" />
         <activity
-            android:name=".Graph"
-            android:exported="false" />
-        <activity
-            android:name=".graph"
-            android:exported="false" />
-        <activity
             android:name=".sign_up"
             android:exported="false" />
         <activity

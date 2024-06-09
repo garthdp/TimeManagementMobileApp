@@ -39,12 +39,6 @@
             android:name="com.example.taskwavepart1.graphTest"
             android:exported="false" />
         <activity
-            android:name="com.example.taskwavepart1.Graph"
-            android:exported="false" />
-        <activity
-            android:name="com.example.taskwavepart1.graph"
-            android:exported="false" />
-        <activity
             android:name="com.example.taskwavepart1.sign_up"
             android:exported="false" />
         <activity
