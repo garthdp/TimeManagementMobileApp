@@ -7,10 +7,11 @@ import java.sql.Time
 import java.util.Date
 
 data class Timesheet (
-    val description: String,
-    val category: Category,
-    val image: Uri?,
-    val date: String?,
-    val startTime: String,
-    val endTime: String
+    var description: String? = "",
+    var category: String? = "",
+    var image: String? = "",
+    var date: String? = "",
+    var startTime: String? = "",
+    var user: String? = "",
+    var endTime: String? = ""
 )

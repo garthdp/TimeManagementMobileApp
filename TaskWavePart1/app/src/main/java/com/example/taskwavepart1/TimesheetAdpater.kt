@@ -1,6 +1,7 @@
 package com.example.taskwavepart1
 
 import android.content.Intent
+import android.os.Build
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.appcompat.view.menu.MenuView.ItemView
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 
 class TimesheetAdpater : ListAdapter<Timesheet, TimesheetAdpater.TimesheetAdpater>(TimesheetViewHolder())
@@ -32,10 +34,10 @@ class TimesheetAdpater : ListAdapter<Timesheet, TimesheetAdpater.TimesheetAdpate
     override fun onBindViewHolder(holder: TimesheetAdpater, position: Int)
     {
         val timesheet = getItem(position)
+        val imageUri = timesheet.image!!.toUri()
         holder.itemView.findViewById<TextView>(R.id.txtTsDate).text = timesheet.date
         holder.itemView.findViewById<TextView>(R.id.txtTsStartTime).text = timesheet.startTime
         holder.itemView.findViewById<TextView>(R.id.txtTsEndTime).text = timesheet.endTime
-        holder.itemView.findViewById<ImageView>(R.id.imgTsItem).setImageURI(timesheet.image)
         holder.itemView.setOnClickListener{
             if (onClickListener != null){
                 onClickListener!!.onClick(position, timesheet)

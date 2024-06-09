@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\activity_timesheet_entry.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_timesheet_entry.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\timesheet_item.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\timesheet_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\category_item.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\category_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\activity_graph_test.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_graph_test.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\activity_sign_up.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_sign_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\activity_category_entry.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_category_entry.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\activity_timesheet_details.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_timesheet_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\activity_graph.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\activity_categories.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_categories.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-mergeDebugResources-51:/layout/activity_graph_test.xml",
+        "source": "com.example.taskwavepart1.app-main-54:/layout/activity_graph_test.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\activity_timesheets.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_timesheets.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\spinner_list.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\spinner_list.xml"
+    }
+]

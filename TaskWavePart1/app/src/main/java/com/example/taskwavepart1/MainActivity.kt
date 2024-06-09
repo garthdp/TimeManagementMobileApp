@@ -16,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.loginfunction.User
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -30,8 +31,10 @@ var currentUser : User? = null
 var userEmail : String? = null
 
 class MainActivity : AppCompatActivity() {
+    lateinit var rootNode: FirebaseDatabase
+    lateinit var userReference : DatabaseReference
+    lateinit var auth: FirebaseAuth
 
-    private lateinit var auth: FirebaseAuth
     public override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
@@ -72,12 +75,12 @@ class MainActivity : AppCompatActivity() {
                 isEmptyCheck = true
             }
             if (!isEmptyCheck) {
-                var email = user.text.toString()
-                var password = pass.text.toString()
+                val email = user.text.toString()
+                val password = pass.text.toString()
+
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-
                             progressBar.visibility = View.INVISIBLE
                             val intent = Intent(this, categories::class.java)
                             startActivity(intent)

@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -30,9 +31,9 @@ class timesheet_details : AppCompatActivity() {
         val imgTsDetail : ImageView = findViewById(R.id.imgTsDetail)
 
         txtTsdDate.text = currentTimesheet?.date
-        txtTsdCatName.text = currentTimesheet?.category?.name
+        txtTsdCatName.text = currentTimesheet?.category
         txtTsdTime.text = currentTimesheet?.startTime + " - " + currentTimesheet?.endTime
-        imgTsDetail.setImageURI(currentTimesheet?.image)
+        imgTsDetail.setImageURI(currentTimesheet?.image!!.toUri())
         txtTimesheetDescription.text = currentTimesheet?.description
 
         btnTsdBack.setOnClickListener{

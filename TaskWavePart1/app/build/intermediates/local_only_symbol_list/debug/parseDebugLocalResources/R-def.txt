@@ -16,6 +16,7 @@ id btnCateListBack
 id btnFilter
 id btnFilterDate1
 id btnFilterDate2
+id btnGraph
 id btnLogin
 id btnPickDateTimesheet
 id btnPickImage
@@ -34,6 +35,7 @@ id edtUsername
 id imageView
 id imgTsDetail
 id imgTsItem
+id lineChart
 id main
 id progressBar
 id rcCategories
@@ -72,6 +74,7 @@ id txtTsdDate
 id txtTsdTime
 layout activity_categories
 layout activity_category_entry
+layout activity_graph_test
 layout activity_main
 layout activity_sign_up
 layout activity_timesheet_details
@@ -83,6 +86,7 @@ layout timesheet_item
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id

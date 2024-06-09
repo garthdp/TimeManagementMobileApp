@@ -4,11 +4,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import org.w3c.dom.Text
 
 class category_entry : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +35,6 @@ class category_entry : AppCompatActivity() {
         val txtMaxHours : TextView = findViewById(R.id.txtMaxHours)
         val btnAddCategory : Button = findViewById(R.id.btnAddCategory)
         val btnCateBack : FloatingActionButton = findViewById(R.id.btnCateBack)
-        var check = true
 
         btnCateBack.setOnClickListener{
             val intent = Intent(this, categories::class.java)
@@ -33,47 +42,50 @@ class category_entry : AppCompatActivity() {
         }
 
         btnAddCategory.setOnClickListener{
-            for(i in arrCategories.indices){
-                if (txtCategoryName.text.toString() == arrCategories[i].name && currentUser == arrCategories[i].user){
-                    check = false
-                }
+            var error = false
+            var isEmpty = false
+
+            if (txtCategoryName.text.isEmpty()){
+                txtCategoryName.error = "Needs to be filled"
+                isEmpty = true
             }
-            if(txtCategoryName.text.isNotEmpty() && txtMinHours.text.isNotEmpty() && txtMaxHours.text.isNotEmpty())
-            {
-                if(check && txtMaxHours.text.toString().toInt() <= 12 && txtMinHours.text.toString().toInt() < txtMaxHours.text.toString().toInt())
-                {
-                    val category = Category(txtCategoryName.text.toString(), currentUser, txtMinHours.text.toString().toInt(), txtMaxHours.text.toString().toInt())
-                    arrCategories.add(category)
-                    val intent = Intent(this, categories::class.java)
-                    startActivity(intent)
-                }
-                else
-                {
-                    if (!check){
-                        txtCategoryName.error = "Name already in use"
-                    }
-                    if (txtMaxHours.text.toString().toInt() > 12){
-                        txtMaxHours.error = "Can't be bigger than 12hrs"
-                    }
-                    if (txtMinHours.text.toString().toInt() >= txtMaxHours.text.toString().toInt()){
-                        txtMinHours.error = "Min can't be bigger than max"
-                    }
-                    if (txtMinHours.text.toString().toInt() == txtMaxHours.text.toString().toInt()){
-                        txtMinHours.error = "Min can't be equal to max"
-                    }
-                }
+            if (txtMaxHours.text.isEmpty()){
+                txtMaxHours.error = "Needs to be filled"
+                isEmpty = true
+            }
+            if (txtMinHours.text.isEmpty()){
+                txtMinHours.error = "Needs to be filled"
+                isEmpty = true
+            }
+            if (!isEmpty && txtMaxHours.text.toString().toInt() > 12){
+                txtMaxHours.error = "Can't be bigger than 12hrs"
+                error = true
+            }
+            if (!isEmpty && txtMinHours.text.toString().toInt() >= txtMaxHours.text.toString().toInt()){
+                txtMinHours.error = "Min can't be bigger than max"
+                error = true
+            }
+            if (!isEmpty && !isEmpty && txtMinHours.text.toString().toInt() == txtMaxHours.text.toString().toInt()){
+                txtMinHours.error = "Min can't be equal to max"
+                error = true
+            }
+            if (!error && !isEmpty){
+                add(txtCategoryName.text.toString(), txtMinHours.text.toString().toInt(), txtMaxHours.text.toString().toInt())
+                val intent = Intent(this, categories::class.java)
+                startActivity(intent)
             }
             else{
-                if (txtCategoryName.text.isEmpty()){
-                    txtCategoryName.error = "Needs to be filled"
-                }
-                if (txtMaxHours.text.isEmpty()){
-                    txtMaxHours.error = "Needs to be filled"
-                }
-                if (txtMinHours.text.isEmpty()){
-                    txtMinHours.error = "Needs to be filled"
-                }
+                Toast.makeText(
+                    baseContext,
+                    "Failed",
+                    Toast.LENGTH_SHORT,
+                ).show()
             }
         }
+    }
+    fun add(name: String, min: Int, max: Int){
+        val addReference = FirebaseDatabase.getInstance().getReference("Categories")
+        val category : Category = Category(name, min, Firebase.auth.currentUser!!.uid, max)
+        addReference.child(category.name!!).setValue(category)
     }
 }

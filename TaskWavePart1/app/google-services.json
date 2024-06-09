@@ -1,13 +1,14 @@
 {
   "project_info": {
     "project_number": "274341236336",
+    "firebase_url": "https://poedb-ab1be-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "poedb-ab1be",
     "storage_bucket": "poedb-ab1be.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:274341236336:android:7bc9604695b14ef2a0eeb5",
+        "mobilesdk_app_id": "1:274341236336:android:dcc96ab246c43275a0eeb5",
         "android_client_info": {
           "package_name": "com.example.taskwavepart1"
         }
