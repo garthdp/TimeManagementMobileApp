@@ -84,10 +84,10 @@ class timesheets : AppCompatActivity() {
 
                 for (ds in snapshot.getChildren()) {
                     val user = ds.child("user").getValue<String>(String::class.java)
-                    if (user == Firebase.auth.currentUser!!.uid){
+                    val category = ds.child("category").getValue<String>(String::class.java)
+                    if (user == Firebase.auth.currentUser!!.uid && category == currentCategory!!.name){
                         val description = ds.child("description").getValue<String>(String::class.java)
                         val date = ds.child("date").getValue<String>(String::class.java)
-                        val category = ds.child("category").getValue<String>(String::class.java)
                         val endTime = ds.child("endTime").getValue<String>(String::class.java)
                         val startTime = ds.child("startTime").getValue<String>(String::class.java)
                         val image = ds.child("image").getValue<String>(String::class.java)
@@ -97,7 +97,6 @@ class timesheets : AppCompatActivity() {
                         arTimesheets.add(cat)
                     }
                 }
-                Log.d("Tag", "${arTimesheets.toString()}")
                 Handler(Looper.getMainLooper()).post{
                     timesheetAdapter.submitList(arTimesheets)
                 }
@@ -153,7 +152,6 @@ class timesheets : AppCompatActivity() {
                     arrFilteredList.add(arTimesheets[i])
                 }
             }
-            Log.d("TAG", arrFilteredList.toString())
             //loadList(arrFilteredList)
             Handler(Looper.getMainLooper()).post{
                 timesheetAdapter.submitList(arrFilteredList)

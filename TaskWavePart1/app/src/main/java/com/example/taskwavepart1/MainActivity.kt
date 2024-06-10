@@ -17,11 +17,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
-var arrCategories = ArrayList<Category>()
-var arrTimesheets = ArrayList<Timesheet>()
 var currentCategory : Category? = null
 var currentTimesheet : Timesheet? = null
-var currentUser : User? = null
 var userEmail : String? = null
 
 class MainActivity : AppCompatActivity() {
@@ -34,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
         userEmail = auth.currentUser?.email.toString()
         if (currentUser != null) {
-            val intent = Intent(this, categories::class.java)
+            val intent = Intent(this, Agenda::class.java)
             startActivity(intent)
         }
     }
@@ -76,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             progressBar.visibility = View.INVISIBLE
-                            val intent = Intent(this, categories::class.java)
+                            val intent = Intent(this, Agenda::class.java)
                             startActivity(intent)
                         } else {
                             progressBar.visibility = View.INVISIBLE

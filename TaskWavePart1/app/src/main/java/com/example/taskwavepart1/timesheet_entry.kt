@@ -19,6 +19,7 @@ import androidx.annotation.RequiresExtension
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.Firebase
@@ -56,8 +57,6 @@ class timesheet_entry : AppCompatActivity() {
         val txtEndTime : EditText = findViewById(R.id.txtEndTime)
         val btnAddTimesheet : Button = findViewById(R.id.btnAddTimesheet)
         val txtSelectedDate : TextView = findViewById(R.id.txtSelectedDate)
-        val btnBack : FloatingActionButton = findViewById(R.id.btnBack)
-
 
         /*
         Code attribution
@@ -67,7 +66,6 @@ class timesheet_entry : AppCompatActivity() {
         Usage = used to see how to populate spinner
         */
         val spinner : Spinner = findViewById(R.id.spinner)
-        Log.d("Tag", "${arrCatNames.toString()}")
         val adapter = ArrayAdapter(this, R.layout.spinner_list, arrCatNames)
         spinner.adapter = adapter
 
@@ -91,19 +89,33 @@ class timesheet_entry : AppCompatActivity() {
                 txtSelectedDate.text = "Date: " + date
             }
         }
-        btnBack.setOnClickListener{
-            val intent = Intent(this, timesheets::class.java)
-            startActivity(intent)
-        }
         btnPickImage.setOnClickListener {
             val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
             startActivityForResult(intent, 1)
         }
+        val bottomBar = findViewById<BottomNavigationView>(R.id.NavBar)
+
+        bottomBar.setOnItemSelectedListener{
+            when(it.itemId)
+            {
+                R.id.ic_home->{
+                    val intent = Intent(this, Agenda::class.java)
+                    startActivity(intent)
+                }
+                R.id.ic_category->{
+                    val intent = Intent(this, categories::class.java)
+                    startActivity(intent)
+                }
+                R.id.ic_timesheet->{
+                    val intent = Intent(this, timesheet_entry::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
         btnAddTimesheet.setOnClickListener{
 
-            Log.d("Tag", "${arrCatNames.toString()}")
             val spinnerItem = spinner.selectedItem as String
-            Log.d("Tag", spinnerItem)
             var emptyTest = false
             var checkFormat = true
 
@@ -177,7 +189,7 @@ class timesheet_entry : AppCompatActivity() {
 
                     add(timesheet)
 
-                    val intent = Intent(this, timesheets::class.java)
+                    val intent = Intent(this, Agenda::class.java)
                     startActivity(intent)
                 }
                 else{

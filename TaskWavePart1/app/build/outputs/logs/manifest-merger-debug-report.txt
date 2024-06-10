@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:2:1-49:12
+ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:2:1-52:12
 MERGED from [androidx.databinding:viewbinding:8.3.2] C:\Users\User\.gradle\caches\transforms-3\07c721cd5fd07f745f8a7b8fd2c611e0\transformed\viewbinding-8.3.2\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\User\.gradle\caches\transforms-3\3742e9263f365990fce4b4b3cd30d2e1\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-database:21.0.0] C:\Users\User\.gradle\caches\transforms-3\3952f986df6c982795a259017c3da3e8\transformed\firebase-database-21.0.0\AndroidManifest.xml:15:1-38:12
@@ -97,8 +97,8 @@ ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\Ta
 	android:name
 		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:5:22-73
 application
-ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:7:5-47:19
-INJECTED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:7:5-47:19
+ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:7:5-50:19
+INJECTED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:7:5-50:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\User\.gradle\caches\transforms-3\3742e9263f365990fce4b4b3cd30d2e1\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\User\.gradle\caches\transforms-3\3742e9263f365990fce4b4b3cd30d2e1\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.firebase:firebase-database:21.0.0] C:\Users\User\.gradle\caches\transforms-3\3952f986df6c982795a259017c3da3e8\transformed\firebase-database-21.0.0\AndroidManifest.xml:25:5-36:19
@@ -163,64 +163,70 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Us
 		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:15:9-51
 	android:dataExtractionRules
 		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:9:9-65
-activity#com.example.taskwavepart1.graphTest
+activity#com.example.taskwavepart1.Agenda
 ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:17:9-19:40
 	android:exported
 		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:19:13-37
 	android:name
-		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:18:13-38
-activity#com.example.taskwavepart1.sign_up
+		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:18:13-35
+activity#com.example.taskwavepart1.graphTest
 ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:20:9-22:40
 	android:exported
 		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:22:13-37
 	android:name
-		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:21:13-36
-activity#com.example.taskwavepart1.timesheet_details
+		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:21:13-38
+activity#com.example.taskwavepart1.sign_up
 ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:23:9-25:40
 	android:exported
 		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:25:13-37
 	android:name
-		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:24:13-46
-activity#com.example.taskwavepart1.timesheets
+		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:24:13-36
+activity#com.example.taskwavepart1.timesheet_details
 ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:26:9-28:40
 	android:exported
 		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:28:13-37
 	android:name
-		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:27:13-39
-activity#com.example.taskwavepart1.categories
+		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:27:13-46
+activity#com.example.taskwavepart1.timesheets
 ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:29:9-31:40
 	android:exported
 		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:31:13-37
 	android:name
 		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:30:13-39
-activity#com.example.taskwavepart1.timesheet_entry
+activity#com.example.taskwavepart1.categories
 ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:32:9-34:40
 	android:exported
 		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:34:13-37
 	android:name
-		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:33:13-44
-activity#com.example.taskwavepart1.category_entry
+		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:33:13-39
+activity#com.example.taskwavepart1.timesheet_entry
 ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:35:9-37:40
 	android:exported
 		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:37:13-37
 	android:name
-		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:36:13-43
-activity#com.example.taskwavepart1.MainActivity
-ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:38:9-46:20
+		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:36:13-44
+activity#com.example.taskwavepart1.category_entry
+ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:38:9-40:40
 	android:exported
-		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:40:13-36
+		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:40:13-37
 	android:name
-		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:39:13-41
+		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:39:13-43
+activity#com.example.taskwavepart1.MainActivity
+ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:41:9-49:20
+	android:exported
+		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:43:13-36
+	android:name
+		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:42:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:41:13-45:29
+ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:44:13-48:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:42:17-69
+ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:45:17-69
 	android:name
-		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:42:25-66
+		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:45:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:44:17-77
+ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:47:17-77
 	android:name
-		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:44:27-74
+		ADDED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml:47:27-74
 uses-sdk
 INJECTED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\User\StudioProjects\vcnmb-opsc7311-2024-poe-team-taskwave\TaskWavePart1\app\src\main\AndroidManifest.xml

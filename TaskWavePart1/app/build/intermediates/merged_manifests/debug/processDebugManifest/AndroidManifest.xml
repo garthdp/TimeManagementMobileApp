@@ -36,6 +36,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.TaskWavePart1" >
         <activity
+            android:name="com.example.taskwavepart1.Agenda"
+            android:exported="false" />
+        <activity
             android:name="com.example.taskwavepart1.graphTest"
             android:exported="false" />
         <activity

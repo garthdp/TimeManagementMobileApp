@@ -2994,9 +2994,12 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable addtimesheet
 drawable avd_hide_password
 drawable avd_show_password
 drawable backg
+drawable baseline_home_24
+drawable bottom_nav_icon_color_selector
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3006,6 +3009,8 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable camera
+drawable categorybtn
+drawable categorybutton
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3032,6 +3037,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable homebutton
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -3129,6 +3135,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable taskwave_logo
 drawable test_level_drawable
+drawable timesheetbutton
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -3138,6 +3145,7 @@ id CTRL
 id FUNCTION
 id META
 id NO_DEBUG
+id NavBar
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -3239,23 +3247,24 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id btnAddCategory
 id btnAddTimesheet
-id btnBack
 id btnCateBack
 id btnCateListAdd
-id btnCateListBack
 id btnFilter
 id btnFilterDate1
 id btnFilterDate2
 id btnGraph
+id btnLoad
 id btnLogin
 id btnPickDateTimesheet
 id btnPickImage
 id btnSignLogin
+id btnSignOut
 id btnSignSignup
 id btnSignup
 id btnTsListAdd
 id btnTsListBack
 id btnTsdBack
+id button
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3382,6 +3391,9 @@ id home
 id homeAsUp
 id honorRequest
 id horizontal_only
+id ic_category
+id ic_home
+id ic_timesheet
 id icon
 id icon_group
 id icon_only
@@ -3404,8 +3416,10 @@ id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
+id label
 id labeled
 id layout
+id lblUsernameDisplay
 id left
 id leftToRight
 id legacy
@@ -3537,6 +3551,8 @@ id progress_horizontal
 id radio
 id ratio
 id rcCategories
+id rcCompleted
+id rcGoals
 id rcTimesheets
 id rectangles
 id report_drawn
@@ -3631,6 +3647,8 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView10
+id textView11
 id textView2
 id textView3
 id textView4
@@ -3826,6 +3844,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_agenda
 layout activity_categories
 layout activity_category_entry
 layout activity_graph_test
@@ -3855,6 +3874,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout listitem
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3918,6 +3938,7 @@ layout select_dialog_singlechoice_material
 layout spinner_list
 layout support_simple_spinner_dropdown_item
 layout timesheet_item
+menu menu
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round

@@ -12,7 +12,7 @@
         android:id="@+id/txtTsCatName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="650dp"
+        android:layout_marginBottom="680dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:textAlignment="center"
@@ -29,15 +29,15 @@
     <Button
         android:id="@+id/btnFilter"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="530dp"
         android:backgroundTint="@android:color/holo_blue_light"
         android:onClick="btnFilter"
         android:text="Filter"
-        android:textSize="20dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginBottom="530dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +78,7 @@
             android:layout_marginBottom="10dp"
             android:onClick="btnDate1"
             android:text="Date"
-            android:textSize="20dp" />
+            android:textSize="12dp" />
 
         <Button
             android:id="@+id/btnFilterDate2"
@@ -90,7 +90,7 @@
             android:layout_marginBottom="10dp"
             android:onClick="btnDate2"
             android:text="Date"
-            android:textSize="20dp" />
+            android:textSize="12dp" />
 
         <TextView
             android:id="@+id/textView9"
@@ -113,4 +113,40 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </com.github.mikephil.charting.charts.LineChart>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="530dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:onClick="btnPast"
+        android:text="Past 30 days"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnCateBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="350dp"
+        android:layout_marginBottom="653dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:clickable="true"
+        android:onClick="btnBack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

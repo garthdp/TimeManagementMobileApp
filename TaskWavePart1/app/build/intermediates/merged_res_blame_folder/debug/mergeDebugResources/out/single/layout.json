@@ -12,6 +12,10 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\category_item.xml"
     },
     {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\activity_agenda.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_agenda.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\activity_main.xml",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_main.xml"
     },
@@ -40,12 +44,16 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_categories.xml"
     },
     {
-        "merged": "com.example.taskwavepart1.app-mergeDebugResources-51:/layout/activity_graph_test.xml",
-        "source": "com.example.taskwavepart1.app-main-54:/layout/activity_graph_test.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\listitem.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\listitem.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\activity_timesheets.xml",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_timesheets.xml"
+    },
+    {
+        "merged": "com.example.taskwavepart1.app-mergeDebugResources-51:/layout/activity_categories.xml",
+        "source": "com.example.taskwavepart1.app-main-54:/layout/activity_categories.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-mergeDebugResources-51:\\layout\\spinner_list.xml",

@@ -4,6 +4,7 @@ package com.example.taskwavepart1;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,14 +19,19 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.DataSet;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Locale;
 import java.util.Objects;
 
 public class graphTest extends AppCompatActivity {
@@ -39,8 +45,6 @@ public class graphTest extends AppCompatActivity {
     private Button btnDate1;
     private Button btnDate2;
     private Button btnFilter;
-    private ArrayList<Entry> dataMin = new ArrayList<>();
-    private ArrayList<Entry> dataMax = new ArrayList<>();
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,47 +138,6 @@ public class graphTest extends AppCompatActivity {
         }
         return newDay + "/" + newMonth + "/" + year;
     }
-
-    private ArrayList<Entry> dataValue(String date1, String date2){
-        ArrayList<Entry> dataVals = new ArrayList<Entry>();
-        ArrayList<workDay> days = new ArrayList<workDay>();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        if(!date1.isEmpty() && !date2.isEmpty()){
-            for (int i = 0; i < arrTimeJava.size(); i++){
-                boolean found = false;
-                if (days.isEmpty()){
-                    days.add(new workDay(arrTimeJava.get(i).getDate(), 0));
-                }
-                for(int j = 0; j < days.size(); j++){
-                    if(Objects.equals(days.get(j).date, arrTimeJava.get(i).getDate())){
-                        found = true;
-                    }
-                }
-                if(!found){
-                    days.add(new workDay(arrTimeJava.get(i).getDate(), 0));
-                }
-            }
-            for(int i = 0; i < days.size(); i++){
-                int totalTimesheetHours = 0;
-                for(int j = 0; j < arrTimeJava.size(); j++){
-                    if (Objects.equals(days.get(i).date, arrTimeJava.get(j).getDate())){
-                        int startTimeTotal = (Integer.parseInt(arrTimeJava.get(j).getStartTime().substring(0, 2)) * 60) + Integer.parseInt(arrTimeJava.get(j).getStartTime().substring(3, 5));
-                        int endTimeTotal = (Integer.parseInt(arrTimeJava.get(j).getEndTime().substring(0, 2)) * 60) + Integer.parseInt(arrTimeJava.get(j).getEndTime().substring(3, 5));
-                        totalTimesheetHours += endTimeTotal - startTimeTotal;
-                    }
-                }
-                totalTimesheetHours /= 60;
-                Log.d("outputHours", String.valueOf(totalTimesheetHours));
-                Log.d("outputDate", days.get(i).date);
-                days.get(i).setHours(totalTimesheetHours);
-                dataVals.add(new Entry(i, days.get(i).hours));
-                dataMin.add(new Entry(i, min));
-                dataMax.add(new Entry(i, max));
-            }
-        }
-        return dataVals;
-    }
-
     public void btnDate1(View view) {
         datePickerDialog1.show();
     }
@@ -184,9 +147,56 @@ public class graphTest extends AppCompatActivity {
     }
 
     public void btnFilter(View view) {
-        LineDataSet lineDataSet = new LineDataSet(dataValue(btnDate1.getText().toString(), btnDate2.getText().toString()), "Recorded Hours");
-        LineDataSet lineDataSet1 = new LineDataSet(dataMin, "Min Hours");
-        LineDataSet lineDataSet2 = new LineDataSet(dataMax, "Max Hours");
+        ArrayList<Entry> dataMin = new ArrayList<>();
+        ArrayList<Entry> dataMax = new ArrayList<>();
+        ArrayList<Entry> dataVals = new ArrayList<Entry>();
+        ArrayList<workDay> days = new ArrayList<workDay>();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        if(!btnDate1.getText().equals("Date") && !btnDate2.getText().equals("Date")){
+            LocalDate dateStart = LocalDate.parse(btnDate1.getText(), formatter);
+            LocalDate dateFinish = LocalDate.parse(btnDate2.getText(), formatter);
+
+            /*
+            Code attribution
+            Title = "Number of Days between Two Dates in Java"
+            Website link = https://howtodoinjava.com/java/date-time/calculate-days-between-dates/
+            Author = Lokesh Gupta
+            Usage = Learnt how to get number of days between two dates
+            */
+
+            long duration = ChronoUnit.DAYS.between(dateStart, dateFinish);
+            for (int i = 0; i < duration; i++){
+                LocalDate currentDate = dateFinish.minusDays(i);
+                String formattedDate = currentDate.format(formatter);
+                days.add(new workDay(formattedDate, 0));
+            }
+            Collections.reverse(days);
+            for(int i = 0; i < days.size(); i++){
+                int totalTimesheetHours = 0;
+                for(int j = 0; j < arrTimeJava.size(); j++){
+                    Log.d("DateCheck", days.get(i).date + " " + arrTimeJava.get(j).getDate());
+                    if (Objects.equals(days.get(i).date, arrTimeJava.get(j).getDate())){
+                        int startTimeTotal = (Integer.parseInt(arrTimeJava.get(j).getStartTime().substring(0, 2)) * 60) + Integer.parseInt(arrTimeJava.get(j).getStartTime().substring(3, 5));
+                        int endTimeTotal = (Integer.parseInt(arrTimeJava.get(j).getEndTime().substring(0, 2)) * 60) + Integer.parseInt(arrTimeJava.get(j).getEndTime().substring(3, 5));
+                        totalTimesheetHours += endTimeTotal - startTimeTotal;
+                    }
+                }
+                totalTimesheetHours /= 60;
+                days.get(i).setHours(totalTimesheetHours);
+                dataVals.add(new Entry(i, days.get(i).hours));
+                dataMin.add(new Entry(i, min));
+                dataMax.add(new Entry(i, max));
+            }
+        }
+        if (!dataVals.isEmpty()){
+            makeGraph(dataVals, dataMin, dataMax);
+        }
+    }
+
+    public void makeGraph(ArrayList<Entry> values, ArrayList<Entry> minHours, ArrayList<Entry> maxHours){
+        LineDataSet lineDataSet = new LineDataSet(values, "Recorded Hours");
+        LineDataSet lineDataSet1 = new LineDataSet(minHours, "Min Hours");
+        LineDataSet lineDataSet2 = new LineDataSet(maxHours, "Max Hours");
         ArrayList<ILineDataSet> dataSets = new ArrayList<>();
         dataSets.add(lineDataSet);
         dataSets.add(lineDataSet1);
@@ -203,6 +213,48 @@ public class graphTest extends AppCompatActivity {
         lineChart.setData(data);
         lineChart.invalidate();
     }
+
+
+    public void btnPast(View view) {
+        ArrayList<Entry> dataMin = new ArrayList<>();
+        ArrayList<Entry> dataMax = new ArrayList<>();
+        ArrayList<Entry> dataVals = new ArrayList<Entry>();
+        ArrayList<workDay> days = new ArrayList<workDay>();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate today = LocalDate.now();
+        today = LocalDate.parse(today.format(formatter), formatter);
+        for(int i = 0; i <31; i++){
+            LocalDate currentDate = today.minusDays(i);
+            String formattedDate = currentDate.format(formatter);
+            days.add(new workDay(formattedDate, 0));
+        }
+        Collections.reverse(days);
+        for(int i = 0; i < days.size(); i++){
+            int totalTimesheetHours = 0;
+            for(int j = 0; j < arrTimeJava.size(); j++){
+                Log.d("DateCheck", days.get(i).date + " " + arrTimeJava.get(j).getDate());
+                if (Objects.equals(days.get(i).date, arrTimeJava.get(j).getDate())){
+                    int startTimeTotal = (Integer.parseInt(arrTimeJava.get(j).getStartTime().substring(0, 2)) * 60) + Integer.parseInt(arrTimeJava.get(j).getStartTime().substring(3, 5));
+                    int endTimeTotal = (Integer.parseInt(arrTimeJava.get(j).getEndTime().substring(0, 2)) * 60) + Integer.parseInt(arrTimeJava.get(j).getEndTime().substring(3, 5));
+                    totalTimesheetHours += endTimeTotal - startTimeTotal;
+                }
+            }
+            totalTimesheetHours /= 60;
+            days.get(i).setHours(totalTimesheetHours);
+            dataVals.add(new Entry(i, days.get(i).hours));
+            dataMin.add(new Entry(i, min));
+            dataMax.add(new Entry(i, max));
+        }
+        if (!dataVals.isEmpty()){
+            makeGraph(dataVals, dataMin, dataMax);
+        }
+    }
+
+    public void btnBack(View view) {
+        Intent intent = new Intent(this, timesheets.class);
+        startActivity(intent);
+    }
+
     class workDay{
         private String date;
         private int hours;

@@ -1,23 +1,47 @@
 [
     {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.example.taskwavepart1.app-debug-52:/layout_activity_categories.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-54:/layout/activity_categories.xml"
     },
     {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_baseline_home_24.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\baseline_home_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_listitem.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\listitem.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_backg.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\backg.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_timesheetbutton.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\timesheetbutton.png"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_addtimesheet.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\addtimesheet.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_categories.xml.flat",
@@ -32,12 +56,24 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_sign_up.xml"
     },
     {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_bottom_nav_icon_color_selector.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\bottom_nav_icon_color_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_categorybutton.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\categorybutton.png"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_category_entry.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_category_entry.xml"
     },
     {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\menu_menu.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\menu\\menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_timesheet_entry.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_timesheet_entry.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\xml_backup_rules.xml.flat",
@@ -52,104 +88,40 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_timesheet_item.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\timesheet_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-xhdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-xxxhdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-xxhdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-xhdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_taskwave_logo.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\taskwave_logo.png"
-    },
-    {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-xhdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-mdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_graph.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_graph.xml"
-    },
-    {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-xxxhdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-xxxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-mdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_backg.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\backg.png"
-    },
-    {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-xhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-hdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-mdpi/ic_launcher_foreground.webp"
-    },
-    {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_timesheet_entry.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_timesheet_entry.xml"
-    },
-    {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-hdpi/ic_launcher_foreground.webp"
-    },
-    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_homebutton.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\homebutton.png"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_timesheet_item.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\timesheet_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_categorybtn.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\categorybtn.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_timesheet_details.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_timesheet_details.xml"
     },
     {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-xhdpi/ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-hdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
@@ -172,23 +144,47 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_taskwave_logo.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\taskwave_logo.png"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_camera.jpg.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\camera.jpg"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-xxhdpi/ic_launcher.webp"
-    },
-    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.taskwavepart1.app-debug-52:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_graph.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-mdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_agenda.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_agenda.xml"
     }
 ]

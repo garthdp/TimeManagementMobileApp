@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskwavepart1.graphTest.max
 import com.example.taskwavepart1.graphTest.min
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
@@ -44,17 +45,31 @@ class categories : AppCompatActivity() {
         rootNode = FirebaseDatabase.getInstance()
         userReference = rootNode.getReference("Categories")
         currentCategory = null
-        val btnCateListBack : FloatingActionButton = findViewById(R.id.btnCateListBack)
         val btnCateListAdd : FloatingActionButton = findViewById(R.id.btnCateListAdd)
         val progressBar : ProgressBar = findViewById(R.id.progressBar)
         progressBar.visibility = View.VISIBLE
         min = 0
         max = 0
+        val categories = ArrayList<Category>()
+        val bottomBar = findViewById<BottomNavigationView>(R.id.NavBar)
 
-        btnCateListBack.setOnClickListener{
-            Firebase.auth.signOut()
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        bottomBar.setOnItemSelectedListener{
+            when(it.itemId)
+            {
+                R.id.ic_home->{
+                    val intent = Intent(this, Agenda::class.java)
+                    startActivity(intent)
+                }
+                R.id.ic_category->{
+                    val intent = Intent(this, com.example.taskwavepart1.categories::class.java)
+                    startActivity(intent)
+                }
+                R.id.ic_timesheet->{
+                    val intent = Intent(this, timesheet_entry::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
         }
         btnCateListAdd.setOnClickListener{
             val intent = Intent(this, category_entry::class.java)
@@ -70,11 +85,9 @@ class categories : AppCompatActivity() {
             adapter=categoryAdapter
         }
 
-        val categories = ArrayList<Category>()
 
         // Read from the database
         userReference.addValueEventListener(object: ValueEventListener {
-
             override fun onDataChange(snapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.

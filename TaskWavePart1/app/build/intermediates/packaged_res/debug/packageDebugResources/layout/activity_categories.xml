@@ -8,6 +8,21 @@
     tools:context=".categories"
     android:background="#abe8f7">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/NavBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="150dp"
+        android:background="@color/white"
+        app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
+        app:itemTextColor="@drawable/bottom_nav_icon_color_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rcCategories"
+        app:menu="@menu/menu"
+        app:navigationIconTint="#FFDA1616" />
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -26,7 +41,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcCategories"
         android:layout_width="409dp"
-        android:layout_height="580dp"
+        android:layout_height="470dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="7dp"
         android:layout_marginEnd="1dp"
@@ -34,23 +49,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnCateListAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCateListBack" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnCateListBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="85dp"
-        android:layout_marginBottom="7dp"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/rcCategories"
-        app:layout_constraintEnd_toStartOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -67,14 +66,14 @@
         android:id="@+id/btnCateListAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="324dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@android:color/holo_blue_light"
         android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/NavBar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rcCategories"
         app:srcCompat="@android:drawable/ic_input_add" />
 </androidx.constraintlayout.widget.ConstraintLayout>

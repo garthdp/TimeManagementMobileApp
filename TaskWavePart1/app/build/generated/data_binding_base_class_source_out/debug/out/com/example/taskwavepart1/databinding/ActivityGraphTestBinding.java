@@ -14,6 +14,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.taskwavepart1.R;
 import com.github.mikephil.charting.charts.LineChart;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -23,6 +24,9 @@ public final class ActivityGraphTestBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final FloatingActionButton btnCateBack;
+
+  @NonNull
   public final Button btnFilter;
 
   @NonNull
@@ -30,6 +34,9 @@ public final class ActivityGraphTestBinding implements ViewBinding {
 
   @NonNull
   public final Button btnFilterDate2;
+
+  @NonNull
+  public final Button button;
 
   @NonNull
   public final CardView cardView4;
@@ -49,14 +56,17 @@ public final class ActivityGraphTestBinding implements ViewBinding {
   @NonNull
   public final TextView txtTsCatName;
 
-  private ActivityGraphTestBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnFilter,
-      @NonNull Button btnFilterDate1, @NonNull Button btnFilterDate2, @NonNull CardView cardView4,
-      @NonNull LineChart lineChart, @NonNull ConstraintLayout main, @NonNull TextView textView5,
-      @NonNull TextView textView9, @NonNull TextView txtTsCatName) {
+  private ActivityGraphTestBinding(@NonNull ConstraintLayout rootView,
+      @NonNull FloatingActionButton btnCateBack, @NonNull Button btnFilter,
+      @NonNull Button btnFilterDate1, @NonNull Button btnFilterDate2, @NonNull Button button,
+      @NonNull CardView cardView4, @NonNull LineChart lineChart, @NonNull ConstraintLayout main,
+      @NonNull TextView textView5, @NonNull TextView textView9, @NonNull TextView txtTsCatName) {
     this.rootView = rootView;
+    this.btnCateBack = btnCateBack;
     this.btnFilter = btnFilter;
     this.btnFilterDate1 = btnFilterDate1;
     this.btnFilterDate2 = btnFilterDate2;
+    this.button = button;
     this.cardView4 = cardView4;
     this.lineChart = lineChart;
     this.main = main;
@@ -92,6 +102,12 @@ public final class ActivityGraphTestBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnCateBack;
+      FloatingActionButton btnCateBack = ViewBindings.findChildViewById(rootView, id);
+      if (btnCateBack == null) {
+        break missingId;
+      }
+
       id = R.id.btnFilter;
       Button btnFilter = ViewBindings.findChildViewById(rootView, id);
       if (btnFilter == null) {
@@ -107,6 +123,12 @@ public final class ActivityGraphTestBinding implements ViewBinding {
       id = R.id.btnFilterDate2;
       Button btnFilterDate2 = ViewBindings.findChildViewById(rootView, id);
       if (btnFilterDate2 == null) {
+        break missingId;
+      }
+
+      id = R.id.button;
+      Button button = ViewBindings.findChildViewById(rootView, id);
+      if (button == null) {
         break missingId;
       }
 
@@ -142,8 +164,9 @@ public final class ActivityGraphTestBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityGraphTestBinding((ConstraintLayout) rootView, btnFilter, btnFilterDate1,
-          btnFilterDate2, cardView4, lineChart, main, textView5, textView9, txtTsCatName);
+      return new ActivityGraphTestBinding((ConstraintLayout) rootView, btnCateBack, btnFilter,
+          btnFilterDate1, btnFilterDate2, button, cardView4, lineChart, main, textView5, textView9,
+          txtTsCatName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
