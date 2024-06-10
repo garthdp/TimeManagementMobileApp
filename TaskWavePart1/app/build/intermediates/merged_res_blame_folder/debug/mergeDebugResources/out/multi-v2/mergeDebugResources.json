@@ -1612,21 +1612,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\values-port_values-port.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\0c2083eb793de2ac91d8d301603fc0fa\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "55",
-                        "endOffsets": "106"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\values-iw_values-iw.arsc.flat",
             "map": [
                 {
@@ -1765,6 +1750,21 @@
                         "startOffsets": "5783",
                         "endColumns": "117",
                         "endOffsets": "5896"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\values-port_values-port.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\0c2083eb793de2ac91d8d301603fc0fa\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
                     }
                 }
             ]
@@ -5799,11 +5799,9 @@
                 {
                     "source": "C:\\Users\\User\\StudioProjects\\vcnmb-opsc7311-2024-poe-team-taskwave\\TaskWavePart1\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "45",
-                        "endOffsets": "57"
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
                     },
                     "to": {
                         "startLines": "1994",
@@ -5877,9 +5875,12 @@
                 {
                     "source": "C:\\Users\\User\\StudioProjects\\vcnmb-opsc7311-2024-poe-team-taskwave\\TaskWavePart1\\app\\src\\main\\res\\values\\themes.xml",
                     "from": {
-                        "startLines": "-1,-1",
-                        "startColumns": "-1,-1",
-                        "startOffsets": "-1,-1"
+                        "startLines": "2,-1",
+                        "startColumns": "4,-1",
+                        "startOffsets": "102,-1",
+                        "endLines": "5,-1",
+                        "endColumns": "12,-1",
+                        "endOffsets": "327,-1"
                     },
                     "to": {
                         "startLines": "2615,6603",

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.taskwavepart1.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -23,10 +24,10 @@ public final class ActivityCategoriesBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final FloatingActionButton btnCateListAdd;
+  public final BottomNavigationView NavBar;
 
   @NonNull
-  public final FloatingActionButton btnCateListBack;
+  public final FloatingActionButton btnCateListAdd;
 
   @NonNull
   public final ConstraintLayout main;
@@ -41,12 +42,12 @@ public final class ActivityCategoriesBinding implements ViewBinding {
   public final TextView textView4;
 
   private ActivityCategoriesBinding(@NonNull ConstraintLayout rootView,
-      @NonNull FloatingActionButton btnCateListAdd, @NonNull FloatingActionButton btnCateListBack,
+      @NonNull BottomNavigationView NavBar, @NonNull FloatingActionButton btnCateListAdd,
       @NonNull ConstraintLayout main, @NonNull ProgressBar progressBar,
       @NonNull RecyclerView rcCategories, @NonNull TextView textView4) {
     this.rootView = rootView;
+    this.NavBar = NavBar;
     this.btnCateListAdd = btnCateListAdd;
-    this.btnCateListBack = btnCateListBack;
     this.main = main;
     this.progressBar = progressBar;
     this.rcCategories = rcCategories;
@@ -80,15 +81,15 @@ public final class ActivityCategoriesBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnCateListAdd;
-      FloatingActionButton btnCateListAdd = ViewBindings.findChildViewById(rootView, id);
-      if (btnCateListAdd == null) {
+      id = R.id.NavBar;
+      BottomNavigationView NavBar = ViewBindings.findChildViewById(rootView, id);
+      if (NavBar == null) {
         break missingId;
       }
 
-      id = R.id.btnCateListBack;
-      FloatingActionButton btnCateListBack = ViewBindings.findChildViewById(rootView, id);
-      if (btnCateListBack == null) {
+      id = R.id.btnCateListAdd;
+      FloatingActionButton btnCateListAdd = ViewBindings.findChildViewById(rootView, id);
+      if (btnCateListAdd == null) {
         break missingId;
       }
 
@@ -112,8 +113,8 @@ public final class ActivityCategoriesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityCategoriesBinding((ConstraintLayout) rootView, btnCateListAdd,
-          btnCateListBack, main, progressBar, rcCategories, textView4);
+      return new ActivityCategoriesBinding((ConstraintLayout) rootView, NavBar, btnCateListAdd,
+          main, progressBar, rcCategories, textView4);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

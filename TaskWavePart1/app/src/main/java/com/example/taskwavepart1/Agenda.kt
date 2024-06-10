@@ -87,7 +87,6 @@ class Agenda : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
             }
         }) // end of category arraymaking
 
