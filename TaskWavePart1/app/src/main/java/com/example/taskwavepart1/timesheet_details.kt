@@ -33,7 +33,6 @@ class timesheet_details : AppCompatActivity() {
         txtTsdDate.text = currentTimesheet?.date
         txtTsdCatName.text = currentTimesheet?.category
         txtTsdTime.text = currentTimesheet?.startTime + " - " + currentTimesheet?.endTime
-        imgTsDetail.setImageURI(currentTimesheet?.image!!.toUri())
         txtTimesheetDescription.text = currentTimesheet?.description
 
         btnTsdBack.setOnClickListener{
