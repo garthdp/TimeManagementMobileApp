@@ -94,6 +94,7 @@ class timesheet_entry : AppCompatActivity() {
             startActivityForResult(intent, 1)
         }
         val bottomBar = findViewById<BottomNavigationView>(R.id.NavBar)
+        bottomBar.menu.findItem(R.id.ic_timesheet).setChecked(true)
 
         bottomBar.setOnItemSelectedListener{
             when(it.itemId)

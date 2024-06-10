@@ -140,6 +140,8 @@ class timesheets : AppCompatActivity() {
         }
 
         btnFilter.setOnClickListener {
+            btnFilterDate1.text = "Date"
+            btnFilterDate2.text = "Date"
             val arrFilteredList = ArrayList<Timesheet>()
             totalCategoryHours = 0
             for (i in arTimesheets.indices ){

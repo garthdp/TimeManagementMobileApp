@@ -1,9 +1,5 @@
 [
     {
-        "merged": "com.example.taskwavepart1.app-debug-52:/layout_activity_categories.xml.flat",
-        "source": "com.example.taskwavepart1.app-main-54:/layout/activity_categories.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
@@ -44,12 +40,12 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_categories.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_categories.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_graph_test.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_graph_test.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_categories.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_categories.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_sign_up.xml.flat",
@@ -60,12 +56,16 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\bottom_nav_icon_color_selector.xml"
     },
     {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_category_entry.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_category_entry.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\drawable_categorybutton.png.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\drawable\\categorybutton.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\layout_activity_category_entry.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-main-54:\\layout\\activity_category_entry.xml"
+        "merged": "com.example.taskwavepart1.app-debug-52:/drawable_bottom_nav_icon_color_selector.xml.flat",
+        "source": "com.example.taskwavepart1.app-main-54:/drawable/bottom_nav_icon_color_selector.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.4\\com.example.taskwavepart1.app-debug-52:\\menu_menu.xml.flat",

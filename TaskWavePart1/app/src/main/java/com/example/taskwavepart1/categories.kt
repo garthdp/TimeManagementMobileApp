@@ -52,6 +52,7 @@ class categories : AppCompatActivity() {
         max = 0
         val categories = ArrayList<Category>()
         val bottomBar = findViewById<BottomNavigationView>(R.id.NavBar)
+        bottomBar.menu.findItem(R.id.ic_category).setChecked(true)
 
         bottomBar.setOnItemSelectedListener{
             when(it.itemId)
