@@ -6,9 +6,11 @@ Click green "<> Code" button then download the zip file.
 
 Unzip file and open in andriod studio where you can run it on the emulator of your choice or use your phone.
 
+------------------------------------------------------------------------------------------------------------------------
 Our features:
 Our application has a unique Agenda page where the user can see which categories of theirs still hasnt reached their minimal hours, which categories havent reached their max hours and lastly which categories
 the user has completed for the day. In addition to the agenda page we have the navigation bar that allows users to navigate between the home, category and timesheet view.
+------------------------------------------------------------------------------------------------------------------------
 
 Commit history:
 
