@@ -2,6 +2,7 @@ package com.example.taskwavepart1
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -67,9 +68,9 @@ class Agenda : AppCompatActivity() {
             true
         }
         val rootNode = FirebaseDatabase.getInstance()
-        val userReference = rootNode.getReference("Categories")
+        val categoryRef = rootNode.getReference("Categories")
         val arrCategories = ArrayList<Category>()
-        userReference.addValueEventListener(object: ValueEventListener {
+        categoryRef.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
@@ -79,7 +80,7 @@ class Agenda : AppCompatActivity() {
                         val name = ds.child("name").getValue<String>(String::class.java)
                         val min = ds.child("minHours").getValue<Long>(Long::class.java)
                         val max = ds.child("maxHours").getValue<Long>(Long::class.java)
-                        val cat : Category = Category(name, min!!.toInt(), user, max!!.toInt())
+                        val cat = Category(name, min!!.toInt(), user, max!!.toInt())
                         arrCategories.add(cat)
                         arrCatNames.add(cat.name)
                     }
@@ -93,11 +94,8 @@ class Agenda : AppCompatActivity() {
         val timesheetsRef = rootNode.getReference("Timesheet")
         val arrTimesheets = ArrayList<Timesheet>()
         timesheetsRef.addValueEventListener(object : ValueEventListener {
-
             override fun onDataChange(snapshot: DataSnapshot) {
-
                 var totalHours = 0
-
                 for(i in arrCategories.indices){
                     for (ds in snapshot.getChildren()) {
                         val user = ds.child("user").getValue<String>(String::class.java)
@@ -135,13 +133,14 @@ class Agenda : AppCompatActivity() {
                     if (arrTimesheets[i].category == arrCategories[c].name && Firebase.auth.currentUser!!.uid == arrTimesheets[i].user
                         && arrTimesheets[i].date.toString() == today
                     ) {
+                        Log.d("Timsheets", arrTimesheets[0].startTime.toString())
                         val startTimeTotal: Int = (arrTimesheets[i].startTime!!.substring(0, 2)
                             .toInt() * 60) + arrTimesheets[i].startTime!!.substring(3, 5).toInt()
                         val endTimeTotal: Int = (arrTimesheets[i].endTime!!.substring(0, 2)
                             .toInt() * 60) + arrTimesheets[i].endTime!!.substring(3, 5).toInt()
                         totalCategoryHours += endTimeTotal - startTimeTotal
+                        Log.d("CheckHours", totalCategoryHours.toString())
                     }
-
                 }
                 if (totalCategoryHours < arrCategories[c].minHours!!){
                     arrNotCompletedCategories.add(arrCategories[c].name)

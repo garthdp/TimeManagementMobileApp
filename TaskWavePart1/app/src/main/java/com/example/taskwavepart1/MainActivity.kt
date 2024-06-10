@@ -24,7 +24,7 @@ var userEmail : String? = null
 class MainActivity : AppCompatActivity() {
     lateinit var rootNode: FirebaseDatabase
     lateinit var userReference : DatabaseReference
-    lateinit var auth: FirebaseAuth
+    private lateinit var auth: FirebaseAuth
 
     public override fun onStart() {
         super.onStart()

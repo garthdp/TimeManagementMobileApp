@@ -165,7 +165,7 @@ public class graphTest extends AppCompatActivity {
             */
 
             long duration = ChronoUnit.DAYS.between(dateStart, dateFinish);
-            for (int i = 0; i < duration; i++){
+            for (int i = 0; i < duration + 1; i++){
                 LocalDate currentDate = dateFinish.minusDays(i);
                 String formattedDate = currentDate.format(formatter);
                 days.add(new workDay(formattedDate, 0));
